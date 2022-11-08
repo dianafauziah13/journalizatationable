@@ -56,11 +56,12 @@
     data: () => ({ 
       drawer: null,
       items: [
-        { title: 'Home', icon: 'mdi-home', link: '/' },
-        { title: 'Add Post', icon: 'mdi-note-plus', link: '/add-post' },
-        { title: 'About', icon: 'mdi-help-box', link: '/about' },
-        { title: 'Edit Post', icon: 'mdi-help-box', link: '/edit-post' },
+        { title: 'Account', icon: 'mdi-account-circle-outline', link: '/about' },
         { title: 'Login', icon: 'mdi-help-box', link: '/login' },
+        { title: 'Quotes', icon: 'mdi-format-quote-close-outline', link: '/add-post' },
+        { title: 'Settings', icon: 'mdi-cog-outline', link: '/home' },
+        { title: 'Help', icon: 'mdi-chat-question-outline', link: '/' },
+        { title: 'About', icon: 'mdi-alert-circle-outline', link: '/' },
       ], 
     }),
   }
