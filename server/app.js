@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 // Database connection
 mongoose
-    .connect('mongodb://127.0.0.1:27017/journalizetatioinable', {
+    .connect('mongodb+srv://diana:EVCO9NQyVFmmd9nx@cluster0.laj16hr.mongodb.net/journalizatationable?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: true,
