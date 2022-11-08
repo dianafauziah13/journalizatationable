@@ -51,6 +51,7 @@
 </template>
 
 <script>
+
   export default {
     data: () => ({ 
       drawer: null,
@@ -58,6 +59,8 @@
         { title: 'Home', icon: 'mdi-home', link: '/' },
         { title: 'Add Post', icon: 'mdi-note-plus', link: '/add-post' },
         { title: 'About', icon: 'mdi-help-box', link: '/about' },
+        { title: 'Edit Post', icon: 'mdi-help-box', link: '/edit-post' },
+        { title: 'Login', icon: 'mdi-help-box', link: '/login' },
       ], 
     }),
   }

@@ -29,6 +29,11 @@ const routes = [
     component: EditPost
   },
   {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
