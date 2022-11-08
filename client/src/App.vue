@@ -4,13 +4,14 @@
       v-model="drawer"
       app
     >
-      <v-list-item>
+      <v-list-item class="justify-center">
         <v-list-item-content>
+          <i class="fas fa-user-circle fa-6x"></i>
           <v-list-item-title>
-            DCodemania
+            Guess
           </v-list-item-title>
           <v-list-item-subtitle>
-            MEVN Full stack App
+            Free Version
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -37,8 +38,7 @@
     </v-navigation-drawer>
 
     <v-app-bar app>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
+      <v-icon class="mr-5" @click="drawer = !drawer">fas fa-user-circle</v-icon>
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
 
