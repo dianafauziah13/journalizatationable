@@ -78,6 +78,7 @@ app.post('/api/register',function(req,res){
                          isAuth : true,
                          id : user._id
                          ,email : user.email
+                         ,token : user.token
                      });
                  });    
              });
