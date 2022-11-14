@@ -1,18 +1,18 @@
 <template>
-  <router-view />
+  <v-app>
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
-<style lang="scss">
-  @import 'scss/main.scss';
+<script>
 
-  #app {
-    font-family: 'Source Sans Pro', Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-  }
+export default {
+  name: 'App',
 
-  body {
-    margin: 0;
-  }
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>
