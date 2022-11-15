@@ -42,28 +42,38 @@
                   <v-container class="bg-surface-variant">
                     <v-row no-gutters>
                       <v-col>
-                        <v-sheet class="pa-2 ma-2">
+                        <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            bg-color= "black"
+                            class="greyy"
                             color="cyan"
+                            auto-grow
+                            variant="outlined"
+                            rows="5"
+                            clearable
                             label="How are you today"
                           ></v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-2 ma-2">
+                        <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            bg-color="grey-lighten-2"
+                            class="greyy"
                             color="cyan"
+                            auto-grow
+                            rows="5"
+                            clearable
                             label="What can i do to make better future"
                           ></v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-2 ma-2">
+                        <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            bg-color="grey-lighten-2"
+                            class="greyy"
                             color="cyan"
+                            auto-grow
+                            rows="5"
+                            clearable
                             label="What have i done with my family today"
                           ></v-textarea>
                         </v-sheet>
@@ -72,28 +82,37 @@
                       <v-responsive width="100%"></v-responsive>
 
                       <v-col>
-                        <v-sheet class="pa-2 ma-2">
+                        <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            bg-color="grey-lighten-2"
+                            class="greyy"
                             color="cyan"
+                            auto-grow
+                            rows="5"
+                            clearable
                             label="Problem that i encounter today"
                           ></v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-2 ma-2">
+                        <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            bg-color="grey-lighten-2"
+                            class="greyy"
                             color="cyan"
+                            auto-grow
+                            rows="5"
+                            clearable
                             label="Activities that i do to make me happy today"
                           ></v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-2 ma-2">
+                        <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            bg-color="grey-lighten-2"
+                            class="greyy"
                             color="cyan"
+                            auto-grow
+                            rows="5"
+                            clearable
                             label="Word to describe today"
                           ></v-textarea>
                         </v-sheet>
@@ -129,6 +148,7 @@ data: () => ({
       "green",
       "orange",
       "grey darken-1",
+      "grey lighten-2"
     ],
     names: [
       "Meeting",
@@ -145,5 +165,8 @@ data: () => ({
 </script>
 
 <style>
-
+.greyy{
+  background-color: #d3d3d3;
+  border-radius: 5px;
+}
 </style>
