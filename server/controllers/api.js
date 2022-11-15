@@ -1,11 +1,15 @@
 const Post = require('../models/posts.js');
 const fs = require('fs');
+const User = require('../models/user');
+const posts = require('../models/posts.js');
 
 module.exports = class API {
     // fetch all journals
     static async fetchAllJournals(req, res) {
+        const token = req.headers.token;
         try {
-            const posts = await Post.find();
+            const user = await User.findOne({token:token});
+            const posts = await Post.find({user_id:user.id});
             res.status(200).json(posts);
         } catch (error) {
             res.status(404).json({ message: error.message })
@@ -23,9 +27,14 @@ module.exports = class API {
     }
 
     static async createJournals(req, res) {
+        const token = req.headers.token;
         const post = req.body;
+        const user = await User.findOne({token:token});
+
         const imagename = req.file.filename;
         post.image = imagename;
+        post.user_id = user.id;
+        console.log(post)
         try {
             await Post.create(post)
             res.status(201).json({ message: "Successfully create new Journal" })
@@ -36,6 +45,9 @@ module.exports = class API {
 
     static async manageJournals(req, res) {
         const id = req.params.id;
+        const token = req.headers.token;
+        const user = await User.findOne({token:token});
+
         let new_image = "";
         if (req.file) {
             new_image = req.file.filename;
@@ -52,6 +64,7 @@ module.exports = class API {
         newPost.image = new_image;
 
         try {
+            // dipisah, find update
             await Post.findByIdAndUpdate(id, newPost);
             res.status(200).json({ message: "Successfully update your Journal" })
         } catch (error) {
