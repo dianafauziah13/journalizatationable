@@ -1,5 +1,5 @@
 <template>
-    <v-card color="white" class="rounded-lg" flat>
+    <v-card  class="rounded-lg" flat>
                 <v-sheet tile height="54" class="d-flex">
                   <v-btn icon class="ma-2">
                     <v-icon>mdi-chevron-left</v-icon>
@@ -39,8 +39,70 @@
                     :event-color="getEventColor"
                     @change="getEvents"
                   ></v-calendar>
+                  <v-container class="bg-surface-variant">
+                    <v-row no-gutters>
+                      <v-col>
+                        <v-sheet class="pa-2 ma-2">
+                          <v-textarea
+                            bg-color= "black"
+                            color="cyan"
+                            label="How are you today"
+                          ></v-textarea>
+                        </v-sheet>
+                      </v-col>
+                      <v-col>
+                        <v-sheet class="pa-2 ma-2">
+                          <v-textarea
+                            bg-color="grey-lighten-2"
+                            color="cyan"
+                            label="What can i do to make better future"
+                          ></v-textarea>
+                        </v-sheet>
+                      </v-col>
+                      <v-col>
+                        <v-sheet class="pa-2 ma-2">
+                          <v-textarea
+                            bg-color="grey-lighten-2"
+                            color="cyan"
+                            label="What have i done with my family today"
+                          ></v-textarea>
+                        </v-sheet>
+                      </v-col>
+
+                      <v-responsive width="100%"></v-responsive>
+
+                      <v-col>
+                        <v-sheet class="pa-2 ma-2">
+                          <v-textarea
+                            bg-color="grey-lighten-2"
+                            color="cyan"
+                            label="Problem that i encounter today"
+                          ></v-textarea>
+                        </v-sheet>
+                      </v-col>
+                      <v-col>
+                        <v-sheet class="pa-2 ma-2">
+                          <v-textarea
+                            bg-color="grey-lighten-2"
+                            color="cyan"
+                            label="Activities that i do to make me happy today"
+                          ></v-textarea>
+                        </v-sheet>
+                      </v-col>
+                      <v-col>
+                        <v-sheet class="pa-2 ma-2">
+                          <v-textarea
+                            bg-color="grey-lighten-2"
+                            color="cyan"
+                            label="Word to describe today"
+                          ></v-textarea>
+                        </v-sheet>
+                      </v-col>
+                    </v-row>
+                  </v-container>
                 </v-sheet>
               </v-card>
+    
 </template>
 
 <script>
