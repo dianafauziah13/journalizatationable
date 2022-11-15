@@ -166,7 +166,7 @@ data: () => ({
 
 <style>
 .greyy{
-  background-color: #d3d3d3;
+  background-color: #eee6e6;
   border-radius: 5px;
 }
 </style>
