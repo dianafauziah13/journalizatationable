@@ -119,6 +119,10 @@
                       </v-col>
                     </v-row>
                   </v-container>
+                  <v-btn color="#2784FF" class="withoutupercase ml-5">
+                      <v-icon left>fas fa-plus</v-icon>
+                      Add to Journal
+                  </v-btn>
                 </v-sheet>
               </v-card>
     
@@ -168,5 +172,9 @@ data: () => ({
 .greyy{
   background-color: #eee6e6;
   border-radius: 5px;
+}
+.v-btn.withoutupercase {
+  text-transform: none !important;
+  color: white;
 }
 </style>
