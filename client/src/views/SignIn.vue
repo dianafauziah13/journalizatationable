@@ -31,22 +31,10 @@
 <script>
 
 export default {
-  name: 'SignIn',
-  data () {
-    return {
-      errorMessage: '',
-      editedItemLogin: {
-        email: '',
-        password: ''
-
-      }
+        data() {
+            return {}
+        }
     }
-  },
-
-  methods: {
-    
-  }
-}
 </script>
 
 <style>
@@ -67,7 +55,7 @@ html,
 }
  
 .navbar-light {
-  background-color: #ffffff;
+  background-color: #F9C5D5;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
 }
  
@@ -81,7 +69,7 @@ html,
 .inner-block {
   width: 450px;
   margin: auto;
-  background: #ffffff;
+  background: #F9C5D5;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 40px 55px 45px 55px;
   border-radius: 15px;

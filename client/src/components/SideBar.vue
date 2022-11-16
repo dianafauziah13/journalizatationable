@@ -42,7 +42,7 @@
       <v-icon class="mb-5" color="white">fas fa-cog</v-icon>
 
       <br />
-      <router-link to="/login"><v-icon color="white">fas fa-info-circle</v-icon></router-link>
+      <router-link to="/signup"><v-icon color="white">fas fa-info-circle</v-icon></router-link>
     </div>
   </v-navigation-drawer>
 </template>

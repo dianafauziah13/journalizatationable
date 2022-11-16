@@ -1,16 +1,21 @@
 <template>
     <div class="vue-tempalte">
         <form>
-            <h3>Sign Up</h3>
+            <h3>Register Account</h3>
  
             <div class="form-group">
-                <label>Full Name</label>
+                <label>First Name</label>
                 <input type="text" class="form-control form-control-lg"/>
             </div>
- 
+
             <div class="form-group">
-                <label>Email address</label>
-                <input type="email" class="form-control form-control-lg" />
+              <label>Last Name</label>
+              <input type="text" class="form-control form-control-lg"/>
+            </div>
+
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control form-control-lg"/>
             </div>
  
             <div class="form-group">
@@ -18,11 +23,16 @@
                 <input type="password" class="form-control form-control-lg" />
             </div>
  
-            <button type="submit" class="btn btn-dark btn-lg btn-block">Sign Up</button>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control form-control-lg" />
+            </div>
+ 
+            <button type="submit" class="btn btn-dark btn-lg btn-block">Register</button>
  
             <p class="forgot-password text-right">
-                Already registered 
-                <router-link :to="{name: 'login'}">sign in?</router-link>
+              Already have an account? 
+              <router-link :to="{name: 'login'}">Login</router-link>
             </p>
         </form>
     </div>
