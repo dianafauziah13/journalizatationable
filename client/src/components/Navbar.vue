@@ -11,10 +11,15 @@
     <v-icon x-small color="#2784FF" class="ml-2 mr-2"
       >fas fa-caret-down</v-icon
     >
-    <v-btn color="#2784FF" class="withoutupercase">
-        <v-icon left>fas fa-plus</v-icon>
-        New Journal
-    </v-btn>
+    <router-link
+    to ="/story"
+    tag="v-btn"
+    >
+      <v-btn color="#2784FF" class="withoutupercase">
+          <v-icon left>fas fa-plus</v-icon>
+          New Journal
+      </v-btn>
+    </router-link>
 
 <v-badge dot overlap color="green" class="ml-3 mr-2" dark>
     <v-avatar tile color="#E5F1FF">

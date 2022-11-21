@@ -2,10 +2,13 @@ const mongoose = require('mongoose');
 
 const postSchema = mongoose.Schema({
     user_id : mongoose.SchemaTypes.ObjectId,
-    title: String,
-    myDiary: String,
-    quotes: String,
-    image: String,
+    grid1: String,
+    grid2: String,
+    grid3: String,
+    grid4: String,
+    grid5: String,
+    grid6: String,
+    // image: String,
     created: {
         type: Date,
         default: Date.now

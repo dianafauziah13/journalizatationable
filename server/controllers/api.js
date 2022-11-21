@@ -18,8 +18,10 @@ module.exports = class API {
 
     static async fetchPostByID(req, res) {
         const id = req.params.id;
+        const token = req.headers.token;
         try {
-            const post = await Post.findById(id);
+            const user = await User.findOne({token:token});
+            const post = await Post.findOne({token:user.token, id:id});
             res.status(200).json(post);
         } catch (error) {
             res.status(404).json({ message: error.message })
@@ -31,8 +33,8 @@ module.exports = class API {
         const post = req.body;
         const user = await User.findOne({token:token});
 
-        const imagename = req.file.filename;
-        post.image = imagename;
+        // const imagename = req.file.filename;
+        // post.image = imagename;
         post.user_id = user.id;
         console.log(post)
         try {
@@ -47,25 +49,10 @@ module.exports = class API {
         const id = req.params.id;
         const token = req.headers.token;
         const user = await User.findOne({token:token});
-
-        let new_image = "";
-        if (req.file) {
-            new_image = req.file.filename;
-            try {
-                fs.unlinkSync("./uploads/" + req.body.old_image);
-            } catch (error) {
-                console.log(error.message)
-            }
-        } else {
-            new_image = req.body.old_image;
-        }
-
         const newPost = req.body;
-        newPost.image = new_image;
-
         try {
-            // dipisah, find update
-            await Post.findByIdAndUpdate(id, newPost);
+            await Post.findOneAndUpdate({token:user.token, id:id},newPost);
+            // await Post.findByIdAndUpdate(id, newPost);
             res.status(200).json({ message: "Successfully update your Journal" })
         } catch (error) {
             res.status(404).json({ message: error.message })
@@ -74,15 +61,16 @@ module.exports = class API {
 
     static async deleteJournals(req, res) {
         const id = req.params.id;
+        const user = await User.findOne({token:token});
         try {
-            const result = await Post.findByIdAndDelete(id);
-            if (result.image != '') {
-                try {
-                    fs.unlinkSync('./uploads/'+result.image);
-                } catch (error) {
-                    console.log(error)
-                }
-            }
+            const result = await Post.findOneAndDelete({token:user.token, id : id});
+            // if (result.image != '') {
+            //     try {
+            //         fs.unlinkSync('./uploads/'+result.image);
+            //     } catch (error) {
+            //         console.log(error)
+            //     }
+            // }
             res.status(200).json({ message: "Successfully Delete your Journal" })
         } catch (error) {
             res.status(404).json({ message: error.message })

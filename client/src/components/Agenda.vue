@@ -51,7 +51,7 @@
                             rows="5"
                             clearable
                             label="How are you today"
-                          ></v-textarea>
+                          >{{posts.grid1}}</v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
@@ -63,7 +63,7 @@
                             rows="5"
                             clearable
                             label="What can i do to make better future"
-                          ></v-textarea>
+                          >{{posts.grid2}}</v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
@@ -75,7 +75,7 @@
                             rows="5"
                             clearable
                             label="What have i done with my family today"
-                          ></v-textarea>
+                          >{{posts.grid3}}</v-textarea>
                         </v-sheet>
                       </v-col>
 
@@ -90,7 +90,7 @@
                             rows="5"
                             clearable
                             label="Problem that i encounter today"
-                          ></v-textarea>
+                          >{{posts.grid4}}</v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
@@ -102,7 +102,7 @@
                             rows="5"
                             clearable
                             label="Activities that i do to make me happy today"
-                          ></v-textarea>
+                          >{{posts.grid5}}</v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
@@ -114,14 +114,14 @@
                             rows="5"
                             clearable
                             label="Word to describe today"
-                          ></v-textarea>
+                          >{{posts.grid6}}</v-textarea>
                         </v-sheet>
                       </v-col>
                     </v-row>
                   </v-container>
                   <v-btn color="#2784FF" class="withoutupercase ml-5">
                       <v-icon left>fas fa-plus</v-icon>
-                      Add to Journal
+                      Edit Journal
                   </v-btn>
                 </v-sheet>
               </v-card>
@@ -129,8 +129,18 @@
 </template>
 
 <script>
-export default {
+import API from '@/api';
+
+export default { 
 data: () => ({
+  posts : {
+    grid1 : "",
+    grid2 : "",
+    grid3 : "",
+    grid4 : "",
+    grid5 : "",
+    grid6 : ""
+  } ,
   type: "Happy",
     types: ["Happy", "Sad", "Normal"],
     mode: "Sunny",
@@ -164,7 +174,10 @@ data: () => ({
       "Conference",
       "Party",
     ],
-})
+}),
+async created() {
+      this.posts = await API.getAllPosts();
+}
 }
 </script>
 
