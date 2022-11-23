@@ -7,7 +7,7 @@
     mini-variant-width="80"
   >
     <v-avatar class="d-block text-center mx-auto mt-4 mb-16" color="" size="40">
-      <v-icon color="white" x-large>fab fa-artstation</v-icon>
+      <v-icon color="#C0325F" x-large>mdi-artstation</v-icon>
     </v-avatar>
 
     <v-list flat class="mt-16">
@@ -22,7 +22,7 @@
           <v-list-item-icon>
             <v-icon
               v-text="item.icon"
-              color="white"
+              color="#C0325F"
             ></v-icon>
           </v-list-item-icon>
         </v-list-item>
@@ -39,10 +39,10 @@
         text-align: center;
       "
     >
-      <v-icon class="mb-5" color="white">fas fa-cog</v-icon>
+      <v-icon class="mb-5" color="#C0325F">mdi-cog</v-icon>
 
       <br />
-      <router-link to="/signup"><v-icon color="white">fas fa-info-circle</v-icon></router-link>
+      <router-link to="/signup"><v-icon color="white">-mdi-information-circle</v-icon></router-link>
     </div>
   </v-navigation-drawer>
 </template>
@@ -56,11 +56,11 @@ export default {
     selectedItem: 3,
     drawer: null,
     items: [
-      { icon: "fas fa-file-medical-alt" },
-      { icon: "fas fa-user-nurse" },
-      { icon: "fas fa-virus" },
-      { icon: "fas fa-user-md" },
-      { icon: "fas fa-comment-medical" },
+      { icon: "mdi-home-circle" },
+      { icon: "mdi-home-circle" },
+      { icon: "mdi-home-circle" },
+      { icon: "mdi-home-circle" },
+      { icon: "mdi-home-circle" },
     ],
   }),
 };

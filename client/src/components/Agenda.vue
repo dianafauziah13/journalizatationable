@@ -121,7 +121,7 @@
                     </v-row>
                   </v-container>
                   <v-btn color="#C0325F" class="withoutupercase ml-5">
-                      <v-icon left>fas fa-plus</v-icon>
+                      <v-icon left>mdi-plus</v-icon>
                       Edit Journal
                   </v-btn>
                 </v-sheet>

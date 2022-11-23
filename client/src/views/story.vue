@@ -42,9 +42,9 @@
                   <v-container class="bg-surface-variant">
                     <v-row no-gutters>
                       <v-col>
-                        <v-sheet class="pa-1 ma-1">
+                        <v-sheet class="pa-1 ma-10">
                           <v-textarea
-                            class="greyy"
+                            class="pinky"
                             color="cyan"
                             auto-grow
                             variant="outlined"
@@ -57,9 +57,9 @@
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-1 ma-1">
+                        <v-sheet class="pa-1 ma-10">
                           <v-textarea
-                            class="greyy"
+                            class="pinky"
                             color="cyan"
                             auto-grow
                             rows="5"
@@ -71,9 +71,9 @@
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-1 ma-1">
+                        <v-sheet class="pa-1 ma-10">
                           <v-textarea
-                            class="greyy"
+                            class="pinky"
                             color="cyan"
                             auto-grow
                             rows="5"
@@ -88,9 +88,9 @@
                       <v-responsive width="100%"></v-responsive>
 
                       <v-col>
-                        <v-sheet class="pa-1 ma-1">
+                        <v-sheet class="pa-1 ma-10">
                           <v-textarea
-                            class="greyy"
+                            class="pinky"
                             color="cyan"
                             auto-grow
                             rows="5"
@@ -102,9 +102,9 @@
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-1 ma-1">
+                        <v-sheet class="pa-1 ma-10">
                           <v-textarea
-                            class="greyy"
+                            class="pinky"
                             color="cyan"
                             auto-grow
                             rows="5"
@@ -116,9 +116,9 @@
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-1 ma-1">
+                        <v-sheet class="pa-1 ma-10">
                           <v-textarea
-                            class="greyy"
+                            class="pinky"
                             color="cyan"
                             auto-grow
                             rows="5"
@@ -130,7 +130,7 @@
                         </v-sheet>
                       </v-col>
                     </v-row>
-                    <v-btn @click= "submitForm()" color="#2784FF" class="withoutupercase ml-5" >
+                    <v-btn @click= "submitForm()" color="#C0325F" class="withoutupercase ml-5" >
                       <v-icon left>fas fa-plus</v-icon>
                       Add to Journal
                     </v-btn>
@@ -199,5 +199,9 @@ import API from '@/api';
 .v-btn.withoutupercase {
   text-transform: none !important;
   color: white;
+}
+.pinky{
+  background-color: #FEE3EC;
+  border-radius: 5px;
 }
 </style>

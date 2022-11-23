@@ -8,11 +8,11 @@
               ></v-date-picker>
             </v-row>
 
-            <v-toolbar color="transparent" flat class="mt-4">
+            <v-toolbar color="transparent" flat class="mt-3">
               <h4 class="black--text">Recent Journals</h4>
               <v-spacer></v-spacer>
-              <v-avatar tile color="#ECF5FF">
-                <v-icon color="#2784FF">fas fa-angle-up</v-icon>
+              <v-avatar >
+                <v-icon color="black">mdi-chevron-up</v-icon>
               </v-avatar>
             </v-toolbar>
             <v-list class="mt-n6" color="transparent" dense>
