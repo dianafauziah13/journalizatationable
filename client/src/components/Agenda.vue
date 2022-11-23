@@ -39,7 +39,7 @@
                     :event-color="getEventColor"
                     @change="getEvents"
                   ></v-calendar> -->
-                  <v-container class="bg-surface-variant">
+                  <v-container class="bg-surface-variant" v-for="post in post" :key="post.created">
                     <v-row no-gutters >
                       <v-col >
                         <v-sheet class="pa-1 ma-1">
