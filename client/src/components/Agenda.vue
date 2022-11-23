@@ -28,7 +28,7 @@
                   </v-btn>
                 </v-sheet>
                 <v-sheet height="600">
-                  <v-calendar
+                  <!-- <v-calendar
                     ref="calendar"
                     v-model="value"
                     :weekdays="weekday"
@@ -38,10 +38,10 @@
                     :event-overlap-threshold="30"
                     :event-color="getEventColor"
                     @change="getEvents"
-                  ></v-calendar>
+                  ></v-calendar> -->
                   <v-container class="bg-surface-variant">
-                    <v-row no-gutters>
-                      <v-col>
+                    <v-row no-gutters >
+                      <v-col >
                         <v-sheet class="pa-1 ma-1">
                           <v-textarea  
                             class="pinky"
@@ -133,52 +133,55 @@
 import API from '@/api';
 
 export default { 
-data: () => ({
-  posts : {
-    grid1 : "",
-    grid2 : "",
-    grid3 : "",
-    grid4 : "",
-    grid5 : "",
-    grid6 : ""
-  } ,
-  type: "Happy",
-    types: ["Happy", "Sad", "Normal"],
-    mode: "Sunny",
-    modes: ["Sunny", "Rainy", "Cloudy", "Foggy", "Windy", "Lightning"],
-    weekday: [0, 1, 2, 3, 4, 5, 6],
-    weekdays: [
-      { text: "Sun - Sat", value: [0, 1, 2, 3, 4, 5, 6] },
-      { text: "Mon - Sun", value: [1, 2, 3, 4, 5, 6, 0] },
-      { text: "Mon - Fri", value: [1, 2, 3, 4, 5] },
-      { text: "Mon, Wed, Fri", value: [1, 3, 5] },
-    ],
-    value: "",
-    events: [],
-    colors: [
-      "blue",
-      "indigo",
-      "deep-purple",
-      "cyan",
-      "green",
-      "orange",
-      "grey darken-1",
-      "grey lighten-2"
-    ],
-    names: [
-      "Meeting",
-      "Holiday",
-      "PTO",
-      "Travel",
-      "Event",
-      "Birthday",
-      "Conference",
-      "Party",
-    ],
-}),
-async created() {
-      this.posts = await API.getAllPosts();
-}
+  data () {
+    return {
+      posts : []
+      // grid1 : "",
+      // grid2 : "",
+      // grid3 : "",
+      // grid4 : "",
+      // grid5 : "",
+      // grid6 : ""
+    
+    }
+    // type: "Happy",
+    //   types: ["Happy", "Sad", "Normal"],
+    //   mode: "Sunny",
+    //   modes: ["Sunny", "Rainy", "Cloudy", "Foggy", "Windy", "Lightning"],
+    //   weekday: [0, 1, 2, 3, 4, 5, 6],
+    //   weekdays: [
+    //     { text: "Sun - Sat", value: [0, 1, 2, 3, 4, 5, 6] },
+    //     { text: "Mon - Sun", value: [1, 2, 3, 4, 5, 6, 0] },
+    //     { text: "Mon - Fri", value: [1, 2, 3, 4, 5] },
+    //     { text: "Mon, Wed, Fri", value: [1, 3, 5] },
+    //   ],
+    //   value: "",
+    //   events: [],
+    //   colors: [
+    //     "blue",
+    //     "indigo",
+    //     "deep-purple",
+    //     "cyan",
+    //     "green",
+    //     "orange",
+    //     "grey darken-1",
+    //     "grey lighten-2"
+    //   ],
+    //   names: [
+    //     "Meeting",
+    //     "Holiday",
+    //     "PTO",
+    //     "Travel",
+    //     "Event",
+    //     "Birthday",
+    //     "Conference",
+    //     "Party",
+    //   ],
+  },
+  async created() {
+        this.posts = await API.getAllPosts();
+        console.log(this.posts)
+  }
 }
 </script>
 
