@@ -142,17 +142,10 @@ data: () => ({
     grid5 : "",
     grid6 : ""
   } ,
-  type: "Happy",
+  type: "",
     types: ["Happy", "Sad", "Normal"],
-    mode: "Sunny",
+    mode: "",
     modes: ["Sunny", "Rainy", "Cloudy", "Foggy", "Windy", "Lightning"],
-    weekday: [0, 1, 2, 3, 4, 5, 6],
-    weekdays: [
-      { text: "Sun - Sat", value: [0, 1, 2, 3, 4, 5, 6] },
-      { text: "Mon - Sun", value: [1, 2, 3, 4, 5, 6, 0] },
-      { text: "Mon - Fri", value: [1, 2, 3, 4, 5] },
-      { text: "Mon, Wed, Fri", value: [1, 3, 5] },
-    ],
     value: "",
     events: [],
     colors: [
