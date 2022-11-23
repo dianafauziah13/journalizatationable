@@ -5,7 +5,6 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import '@mdi/font/css/materialdesignicons.css'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 Vue.config.productionTip = false
 
@@ -15,3 +14,5 @@ new Vue({
   vuetify,
   render: h => h(App)
 }).$mount('#app')
+
+

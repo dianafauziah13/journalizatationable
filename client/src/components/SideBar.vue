@@ -2,7 +2,7 @@
   <v-navigation-drawer
     v-model="drawer"
     app
-    color="#2784FF"
+    color="#FEE3EC"
     mini-variant
     mini-variant-width="80"
   >
