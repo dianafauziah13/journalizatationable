@@ -3,7 +3,7 @@
             <v-row justify="center" class="pt-2">
               <v-date-picker
                 v-model="picker"
-                color="#2784FF"
+                color="#C0325F"
                 width="260"
               ></v-date-picker>
             </v-row>
@@ -27,7 +27,7 @@
                   ></v-list-item-title>
                   <v-list-item-subtitle
                     v-text="chat.subtitle"
-                    class="grey--text"
+                    class="black--text"
                   ></v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>

@@ -4,7 +4,6 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 Vue.config.productionTip = false
 
@@ -14,3 +13,5 @@ new Vue({
   vuetify,
   render: h => h(App)
 }).$mount('#app')
+
+

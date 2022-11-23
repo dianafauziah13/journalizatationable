@@ -43,22 +43,22 @@
                     <v-row no-gutters>
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
-                          <v-textarea
-                            class="greyy"
-                            color="cyan"
+                          <v-textarea  
+                            class="pinky"
+                            background-color="#FEE3EC"
                             auto-grow
                             variant="outlined"
                             rows="5"
                             clearable
-                            label="How are you today"
+                            label="How are you today?"
                           >{{posts.grid1}}</v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            class="greyy"
-                            color="cyan"
+                            class="pinky"
+                            background-color="#FEE3EC"
                             auto-grow
                             rows="5"
                             clearable
@@ -69,8 +69,8 @@
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            class="greyy"
-                            color="cyan"
+                            class="pinky"
+                            background-color="#FEE3EC"
                             auto-grow
                             rows="5"
                             clearable
@@ -84,8 +84,8 @@
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            class="greyy"
-                            color="cyan"
+                            class="pinky"
+                            background-color="#FEE3EC"
                             auto-grow
                             rows="5"
                             clearable
@@ -96,8 +96,8 @@
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            class="greyy"
-                            color="cyan"
+                            class="pinky"
+                            background-color="#FEE3EC"
                             auto-grow
                             rows="5"
                             clearable
@@ -108,18 +108,19 @@
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            class="greyy"
-                            color="cyan"
+                            class="pinky"
+                            background-color="#FEE3EC"
                             auto-grow
                             rows="5"
                             clearable
                             label="Word to describe today"
+                            margin="20px"
                           >{{posts.grid6}}</v-textarea>
                         </v-sheet>
                       </v-col>
                     </v-row>
                   </v-container>
-                  <v-btn color="#2784FF" class="withoutupercase ml-5">
+                  <v-btn color="#C0325F" class="withoutupercase ml-5">
                       <v-icon left>fas fa-plus</v-icon>
                       Edit Journal
                   </v-btn>
@@ -189,5 +190,10 @@ async created() {
 .v-btn.withoutupercase {
   text-transform: none !important;
   color: white;
+}
+.pinky{
+  background-color: #FEE3EC;
+  border-radius: 5px;
+  
 }
 </style>
