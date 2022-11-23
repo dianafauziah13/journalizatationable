@@ -51,7 +51,8 @@
                             rows="5"
                             clearable
                             label="How are you today"
-                          >{{posts.grid1}}</v-textarea>
+                            v-model="post.grid1"
+                          >{{post.grid1}}</v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
@@ -63,7 +64,8 @@
                             rows="5"
                             clearable
                             label="What can i do to make better future"
-                          >{{posts.grid2}}</v-textarea>
+                            v-model="post.grid2"
+                          >{{post.grid2}}</v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
@@ -75,7 +77,8 @@
                             rows="5"
                             clearable
                             label="What have i done with my family today"
-                          >{{posts.grid3}}</v-textarea>
+                            v-model="post.grid3"
+                          >{{post.grid3}}</v-textarea>
                         </v-sheet>
                       </v-col>
 
@@ -90,7 +93,8 @@
                             rows="5"
                             clearable
                             label="Problem that i encounter today"
-                          >{{posts.grid4}}</v-textarea>
+                            v-model="post.grid4"
+                          >{{post.grid4}}</v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
@@ -102,7 +106,8 @@
                             rows="5"
                             clearable
                             label="Activities that i do to make me happy today"
-                          >{{posts.grid5}}</v-textarea>
+                            v-model="post.grid5"
+                          >{{post.grid5}}</v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
@@ -114,12 +119,13 @@
                             rows="5"
                             clearable
                             label="Word to describe today"
-                          >{{posts.grid6}}</v-textarea>
+                            v-model="post.grid6"
+                          >{{post.grid6}}</v-textarea>
                         </v-sheet>
                       </v-col>
                     </v-row>
                   </v-container>
-                  <v-btn color="#2784FF" class="withoutupercase ml-5">
+                  <v-btn @click= "updateForm()" color="#2784FF" class="withoutupercase ml-5">
                       <v-icon left>fas fa-plus</v-icon>
                       Edit Journal
                   </v-btn>
@@ -132,55 +138,49 @@
 import API from '@/api';
 
 export default { 
-  data () {
-    return {
-      posts : []
-      // grid1 : "",
-      // grid2 : "",
-      // grid3 : "",
-      // grid4 : "",
-      // grid5 : "",
-      // grid6 : ""
-    
-    }
-    // type: "Happy",
-    //   types: ["Happy", "Sad", "Normal"],
-    //   mode: "Sunny",
-    //   modes: ["Sunny", "Rainy", "Cloudy", "Foggy", "Windy", "Lightning"],
-    //   weekday: [0, 1, 2, 3, 4, 5, 6],
-    //   weekdays: [
-    //     { text: "Sun - Sat", value: [0, 1, 2, 3, 4, 5, 6] },
-    //     { text: "Mon - Sun", value: [1, 2, 3, 4, 5, 6, 0] },
-    //     { text: "Mon - Fri", value: [1, 2, 3, 4, 5] },
-    //     { text: "Mon, Wed, Fri", value: [1, 3, 5] },
-    //   ],
-    //   value: "",
-    //   events: [],
-    //   colors: [
-    //     "blue",
-    //     "indigo",
-    //     "deep-purple",
-    //     "cyan",
-    //     "green",
-    //     "orange",
-    //     "grey darken-1",
-    //     "grey lighten-2"
-    //   ],
-    //   names: [
-    //     "Meeting",
-    //     "Holiday",
-    //     "PTO",
-    //     "Travel",
-    //     "Event",
-    //     "Birthday",
-    //     "Conference",
-    //     "Party",
-    //   ],
+  data() {
+        return {
+           rules: [(value)=>!!value || "This field is required"],
+           post: {
+               grid1: "",
+               grid2: "",
+               grid3: "",
+               grid4: "",
+               grid5: "",
+               grid6: "",
+           },
+           chooseDate: new Date().toISOString().split('T')[0]
+                // image: "",
+        }
   },
-  async created() {
-        this.posts = await API.getAllPosts();
-        console.log(this.posts)
-  }
+    async created() {
+        const response = await API.getPostByDate(this.chooseDate);
+        // const response = await API.getAllPosts()
+        this.post = response;
+        console.log(this.post)
+        console.log(this.chooseDate)
+
+    },
+        methods: {
+            // selectFile(file){
+            //     this.image = file[0];
+            // },
+            async updateForm() {
+              const formData = {
+                  grid1 : this.post.grid1,
+                  grid2 : this.post.grid2, 
+                  grid3 : this.post.grid3,
+                  grid4 : this.post.grid4,
+                  grid5 : this.post.grid5,
+                  grid6 : this.post.grid6
+                }
+          
+                const response = await API.updatePost(this.$route.params.id, formData);
+                console.log(formData)
+                this.$router.push({ name: 'Home', params: {message: response.message} });
+                
+            }
+        }
 }
 </script>
 

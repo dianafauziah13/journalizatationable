@@ -16,6 +16,24 @@ module.exports = class API {
         }
     }
 
+    static async fetchAllJournalsByDate(req, res) {
+        const token = req.headers.token;
+        const date = req.params.date;
+        let afterDate = date.split('-')
+        afterDate[2] = (parseInt(afterDate[2]) + 1).toString()
+        afterDate = afterDate.join('-')
+        console.log(afterDate)
+
+        try {
+            const user = await User.findOne({token:token});
+            const posts = await Post.find({user_id:user.id, created: { $gte: date, $lte: afterDate }});
+
+            res.status(200).json(posts);
+        } catch (error) {
+            res.status(404).json({ message: error.message })
+        }
+    }
+
     static async fetchPostByID(req, res) {
         const id = req.params.id;
         const token = req.headers.token;
