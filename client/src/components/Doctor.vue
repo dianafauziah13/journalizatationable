@@ -1,12 +1,12 @@
 <template>
    <v-card color="white" class="rounded-lg mt-2" flat>
-            <v-row justify="center" class="pt-2">
+            <!-- <v-row justify="center" class="pt-2">
               <v-date-picker
                 v-model="picker"
                 color="#2784FF"
                 width="260"
               ></v-date-picker>
-            </v-row>
+            </v-row> -->
 
             <v-toolbar color="transparent" flat class="mt-4">
               <h4 class="black--text">Recent Journals</h4>
@@ -50,9 +50,9 @@ data: () => ({
         title: "My Love Story",
       },
     ],
-    picker: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
-      .toISOString()
-      .substr(0, 10),
+    // picker: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+    //   .toISOString()
+    //   .substr(0, 10),
    
 })
 }
