@@ -3,7 +3,7 @@
             <v-row justify="center" class="pt-2 rounded-lg mt-2">
               <v-date-picker
                 v-model="date"
-                color="#2784FF"
+                color="#C0325F"
                 width="260"
               ></v-date-picker>
             </v-row>
@@ -130,7 +130,7 @@
                   </v-container>
 
 
-                  <v-btn @click= "updateForm()" color="#2784FF" class="withoutupercase ml-5">
+                  <v-btn @click= "updateForm()" color="#C0325F" class="withoutupercase ml-5">
                       <v-icon left>fas fa-plus</v-icon>
                       Edit Journal
                   </v-btn>
@@ -161,15 +161,15 @@ export default {
             
       }
 },
-  async created() {
-      const response = await API.getPostByDate(this.chooseDate);
-      // const response = await API.getAllPosts()
-      // const response = await API.getPostByID(this.$route.params.id);
-      this.post = response;
-      console.log(this.post)
-      console.log(this.chooseDate)
+  // async created() {
+  //     const response = await API.getPostByDate(this.chooseDate);
+  //     // const response = await API.getAllPosts()
+  //     // const response = await API.getPostByID(this.$route.params.id);
+  //     this.post = response;
+  //     console.log(this.post)
+  //     console.log(this.chooseDate)
 
-  },
+
     async created() {
         const response = await API.getPostByDate(this.chooseDate);
         this.post = response;
