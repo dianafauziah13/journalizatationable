@@ -1,11 +1,14 @@
 <template>
    <v-card color="white" class="rounded-lg mt-2" flat>
-            <v-row justify="center" class="pt-2">
+            <v-row justify="center" class="pt-3">
               <v-date-picker
                 v-model="picker"
                 color="#C0325F"
-                width="260"
+                header-color="#C0325F"
+                min="2022-11-01"
+                show-adjacent-months
               ></v-date-picker>
+              <p>{{picker}}</p>
             </v-row>
 
             <v-toolbar color="transparent" flat class="mt-3">
@@ -38,6 +41,9 @@
 <script>
 export default {
 data: () => ({
+    return:{
+      picker: new Date()
+    },
     chats: [
       {
         img: "p1.png",
