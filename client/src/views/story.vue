@@ -1,9 +1,10 @@
 <template>
-    <v-card  class="rounded-lg" flat >
-                <!-- <v-sheet tile height="54" class="d-flex">
-                  <v-btn icon class="ma-2">
+    <v-card  class="rounded-lg mt-10" flat >
+                <!-- <v-sheet tile height="54" width="1000" class="d-flex">
+                  <v-btn icon class="ma-20">
                     <v-icon>mdi-chevron-left</v-icon>
                   </v-btn>
+                  <v-spacer></v-spacer>
                   <v-select
                     v-model="type"
                     :items="types"
@@ -23,29 +24,17 @@
                     class="ma-2"
                   ></v-select>
                   <v-spacer></v-spacer>
-                  <v-btn icon class="ma-2" >
+                  <v-btn icon class="mr-20" >
                     <v-icon>mdi-chevron-right</v-icon>
                   </v-btn>
-                </v-sheet>
-                <v-sheet height="600">
-                  <v-calendar
-                    ref="calendar"
-                    v-model="value"
-                    :weekdays="weekday"
-                    :type="type"
-                    :events="events"
-                    :event-overlap-mode="mode"
-                    :event-overlap-threshold="30"
-                    :event-color="getEventColor"
-                    @change="getEvents"
-                  ></v-calendar> -->
+                </v-sheet>  -->
                   <v-container class="bg-surface-variant">
                     <v-row no-gutters>
                       <v-col>
-                        <v-sheet class="pa-1 ma-10">
+                        <v-sheet class="pa-1 mt-10 mr-5">
                           <v-textarea
-                            class="pinky"
-                            color="cyan"
+                            background-color="#FEE3EC"
+                            outlined
                             auto-grow
                             variant="outlined"
                             rows="5"
@@ -57,10 +46,10 @@
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-1 ma-10">
+                        <v-sheet class="pa-1 mt-10">
                           <v-textarea
-                            class="pinky"
-                            color="cyan"
+                           background-color="#FEE3EC"
+                            outlined
                             auto-grow
                             rows="5"
                             clearable
@@ -71,10 +60,10 @@
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-1 ma-10">
+                        <v-sheet class="pa-1 mt-10 ml-5">
                           <v-textarea
-                            class="pinky"
-                            color="cyan"
+                           background-color="#FEE3EC"
+                            outlined
                             auto-grow
                             rows="5"
                             clearable
@@ -88,10 +77,10 @@
                       <v-responsive width="100%"></v-responsive>
 
                       <v-col>
-                        <v-sheet class="pa-1 ma-10">
+                        <v-sheet class="pa-1 mt-5 mr-5">
                           <v-textarea
-                            class="pinky"
-                            color="cyan"
+                            background-color="#FEE3EC"
+                            outlined
                             auto-grow
                             rows="5"
                             clearable
@@ -102,10 +91,10 @@
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-1 ma-10">
+                        <v-sheet class="pa-1 mt-5">
                           <v-textarea
-                            class="pinky"
-                            color="cyan"
+                            background-color="#FEE3EC"
+                            outlined
                             auto-grow
                             rows="5"
                             clearable
@@ -116,10 +105,10 @@
                         </v-sheet>
                       </v-col>
                       <v-col>
-                        <v-sheet class="pa-1 ma-10">
+                        <v-sheet class="pa-1 ml-5 mt-5">
                           <v-textarea
-                            class="pinky"
-                            color="cyan"
+                            background-color="#FEE3EC"
+                            outlined
                             auto-grow
                             rows="5"
                             clearable
@@ -130,8 +119,8 @@
                         </v-sheet>
                       </v-col>
                     </v-row>
-                    <v-btn @click= "submitForm()" color="#C0325F" class="withoutupercase ml-5" >
-                      <v-icon left>fas fa-plus</v-icon>
+                    <v-btn @click= "submitForm()" color="#C0325F" class="withoutupercase ml-1 mt-5" >
+                      <v-icon left>mdi-plus</v-icon>
                       Add to Journal
                     </v-btn>
                   </v-container>
@@ -192,16 +181,8 @@ import API from '@/api';
 </script>
 
 <style>
-.greyy{
-  background-color: #eee6e6;
-  border-radius: 5px;
-}
 .v-btn.withoutupercase {
   text-transform: none !important;
   color: white;
-}
-.pinky{
-  background-color: #FEE3EC;
-  border-radius: 5px;
 }
 </style>

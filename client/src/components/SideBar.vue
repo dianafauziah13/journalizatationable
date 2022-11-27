@@ -6,7 +6,7 @@
     mini-variant
     mini-variant-width="80"
   >
-    <v-avatar class="d-block text-center mx-auto mt-4 mb-16" color="" size="40">
+    <v-avatar class="d-block text-center mx-auto mt-4 mb-16" size="40">
       <v-icon color="#C0325F" x-large>mdi-artstation</v-icon>
     </v-avatar>
 
@@ -23,6 +23,7 @@
             <v-icon
               v-text="item.icon"
               color="#C0325F"
+              large
             ></v-icon>
           </v-list-item-icon>
         </v-list-item>
@@ -39,7 +40,7 @@
         text-align: center;
       "
     >
-      <v-icon class="mb-5" color="#C0325F">mdi-cog</v-icon>
+      <v-icon large class="mb-5" color="#C0325F">mdi-cog</v-icon>
 
       <br />
       <router-link to="/signup"><v-icon color="white">-mdi-information-circle</v-icon></router-link>
@@ -56,21 +57,25 @@ export default {
     selectedItem: 3,
     drawer: null,
     items: [
-      { icon: "mdi-home-circle" },
-      { icon: "mdi-home-circle" },
-      { icon: "mdi-home-circle" },
-      { icon: "mdi-home-circle" },
-      { icon: "mdi-home-circle" },
+      { icon: "mdi-home-outline" },
+      { icon: "mdi-book-outline" },
+      { icon: "mdi-comment-quote-outline" },
+      { icon: "mdi-help-circle-outline" },
+      { icon: "mdi-information-outline"},
     ],
   }),
 };
 </script>
 <style>
 .border {
-  margin-left: 12px;
-  margin-right: 12px;
-  background: #529DFF;
-  border-radius: 50%;
+  /* margin-left: 5px;
+  margin-right: 5px; */
+  /* border-radius: 100%; */
+  /* background: #F999B7; */
+  background: white;
+  /* border-radius: 0%;
+  margin-left: 0px;
+  margin-right: 0px; */
   text-decoration: none;
 }
 .v-list-item-group .v-list-item--active {

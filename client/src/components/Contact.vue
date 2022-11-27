@@ -1,8 +1,8 @@
 <template>
-  <v-card color="#C0325F" class="rounded-lg mt-2" flat>
+  <v-card color="#C0325F" class="rounded-lg mt-1 mb-5" flat>
                 <v-row>
                   <v-col cols="12" sm="4">
-                    <v-card color="#C0325F" class="rounded-lg px-2" flat>
+                    <v-card color="#C0325F" class="rounded-lg px-2 " flat>
                       <v-row>
                         <v-col class="d-flex justify-center mt-3" cols="12" sm="12">
                           <h1 class="white--text">Hello, Diana!</h1>
