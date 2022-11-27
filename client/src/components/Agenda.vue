@@ -3,7 +3,7 @@
           <v-row justify="center" class="pt-2 rounded-lg mt-2">
             <v-date-picker
               v-model="picker"
-              color="#2784FF"
+              color="#F999B7"
               width="260"
             ></v-date-picker>
           </v-row>
@@ -132,7 +132,7 @@
                     </v-col>
                   </v-row>
                 </v-container>
-                <v-btn @click= "updateForm()" color="#2784FF" class="withoutupercase ml-5">
+                <v-btn @click= "updateForm()" color="#C0325F" class="withoutupercase ml-5">
                     <v-icon left>fas fa-plus</v-icon>
                     Edit Journal
                 </v-btn>
