@@ -1,5 +1,12 @@
 <template>
   <v-card  class="rounded-lg" flat>
+          <v-row justify="center" class="pt-2 rounded-lg mt-2">
+            <v-date-picker
+              v-model="picker"
+              color="#2784FF"
+              width="260"
+            ></v-date-picker>
+          </v-row>
               <v-sheet tile height="54" class="d-flex">
                 <v-btn icon class="ma-2">
                   <v-icon>mdi-chevron-left</v-icon>
@@ -39,42 +46,46 @@
                   :event-color="getEventColor"
                   @change="getEvents"
                 ></v-calendar> -->
-                <v-container class="bg-surface-variant">
+                <v-container class="bg-surface-variant" v-for="post in post" :key="post.created">
                   <v-row no-gutters >
                     <v-col >
-                      <v-sheet class="pa-1 ma-1 mt-7">
-                        <v-textarea  
-                          background-color="#FEE3EC" 
-                          outlined
+                      <v-sheet class="pa-1 ma-1">
+                        <v-textarea
+                          class="greyy"
+                          color="cyan"
                           auto-grow
+                          variant="outlined"
                           rows="5"
                           clearable
-                          label="How are you today?"  
-                        >{{posts.grid1}}</v-textarea>
+                          label="How are you today"
+                          v-model="post.grid1"
+                        ></v-textarea>
                       </v-sheet>
                     </v-col>
                     <v-col>
-                      <v-sheet class="pa-1 ma-1 mt-7 ">
+                      <v-sheet class="pa-1 ma-1">
                         <v-textarea
-                          background-color="#FEE3EC"
-                          outlined
+                          class="greyy"
+                          color="cyan"
                           auto-grow
                           rows="5"
                           clearable
                           label="What can i do to make better future"
-                        >{{posts.grid2}}</v-textarea>
+                          v-model="post.grid2"
+                        ></v-textarea>
                       </v-sheet>
                     </v-col>
                     <v-col>
-                      <v-sheet class="pa-1 ma-1 mt-7">
+                      <v-sheet class="pa-1 ma-1">
                         <v-textarea
-                          background-color="#FEE3EC"
-                          outlined
+                          class="greyy"
+                          color="cyan"
                           auto-grow
                           rows="5"
                           clearable
                           label="What have i done with my family today"
-                        >{{posts.grid3}}</v-textarea>
+                          v-model="post.grid3"
+                        ></v-textarea>
                       </v-sheet>
                     </v-col>
 
@@ -83,46 +94,48 @@
                     <v-col>
                       <v-sheet class="pa-1 ma-1">
                         <v-textarea
-                          background-color="#FEE3EC"
-                          outlined
+                          class="greyy"
+                          color="cyan"
                           auto-grow
                           rows="5"
                           clearable
                           label="Problem that i encounter today"
-                        >{{posts.grid4}}</v-textarea>
+                          v-model="post.grid4"
+                        ></v-textarea>
                       </v-sheet>
                     </v-col>
                     <v-col>
                       <v-sheet class="pa-1 ma-1">
                         <v-textarea
-                          background-color="#FEE3EC"
-                          outlined
+                          class="greyy"
+                          color="cyan"
                           auto-grow
                           rows="5"
                           clearable
                           label="Activities that i do to make me happy today"
-                        >{{posts.grid5}}</v-textarea>
+                          v-model="post.grid5"
+                        ></v-textarea>
                       </v-sheet>
                     </v-col>
                     <v-col>
                       <v-sheet class="pa-1 ma-1">
                         <v-textarea
-                          background-color="#FEE3EC"
-                          outlined
+                          class="greyy"
+                          color="cyan"
                           auto-grow
                           rows="5"
                           clearable
                           label="Word to describe today"
-                          margin="20px"
-                        >{{posts.grid6}}</v-textarea>
+                          v-model="post.grid6"
+                        ></v-textarea>
                       </v-sheet>
                     </v-col>
                   </v-row>
-                  <v-btn color="#C0325F" class="withoutupercase ml-2">
-                    <v-icon left>mdi-pencil</v-icon>
+                </v-container>
+                <v-btn @click= "updateForm()" color="#2784FF" class="withoutupercase ml-5">
+                    <v-icon left>fas fa-plus</v-icon>
                     Edit Journal
                 </v-btn>
-                </v-container>
               </v-sheet>
             </v-card>
   
@@ -131,56 +144,64 @@
 <script>
 import API from '@/api';
 
+
 export default { 
-data () {
-  return {
-    posts : [],
-    // grid1 : "",
-    // grid2 : "",
-    // grid3 : "",
-    // grid4 : "",
-    // grid5 : "",
-    // grid6 : "",
-  
-  }
-  // type: "Happy",
-  //   types: ["Happy", "Sad", "Normal"],
-  //   mode: "Sunny",
-  //   modes: ["Sunny", "Rainy", "Cloudy", "Foggy", "Windy", "Lightning"],
-  //   weekday: [0, 1, 2, 3, 4, 5, 6],
-  //   weekdays: [
-  //     { text: "Sun - Sat", value: [0, 1, 2, 3, 4, 5, 6] },
-  //     { text: "Mon - Sun", value: [1, 2, 3, 4, 5, 6, 0] },
-  //     { text: "Mon - Fri", value: [1, 2, 3, 4, 5] },
-  //     { text: "Mon, Wed, Fri", value: [1, 3, 5] },
-  //   ],
-  //   value: "",
-  //   events: [],
-  //   colors: [
-  //     "blue",
-  //     "indigo",
-  //     "deep-purple",
-  //     "cyan",
-  //     "green",
-  //     "orange",
-  //     "grey darken-1",
-  //     "grey lighten-2"
-  //   ],
-  //   names: [
-  //     "Meeting",
-  //     "Holiday",
-  //     "PTO",
-  //     "Travel",
-  //     "Event",
-  //     "Birthday",
-  //     "Conference",
-  //     "Party",
-   // ],
+data() {
+      return {
+         rules: [(value)=>!!value || "This field is required"],
+         post: {
+             grid1: "",
+             grid2: "",
+             grid3: "",
+             grid4: "",
+             grid5: "",
+             grid6: "",
+         },
+         picker: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+          .toISOString()
+          .substr(0, 10),
+         chooseDate: new Date().toISOString().split('T')[0]
+        //  chooseDate: picker
+              
+            
+      }
 },
-async created() {
-      this.posts = await API.getAllPosts();
-      console.log(this.posts)
-}
+  async created() {
+      const response = await API.getPostByDate(this.chooseDate);
+      // const response = await API.getAllPosts()
+      // const response = await API.getPostByID(this.$route.params.id);
+      this.post = response;
+      console.log(this.post)
+      console.log(this.chooseDate)
+
+  },
+      methods: {
+          // selectFile(file){
+          //     this.image = file[0];
+          // },
+          async updateForm() {
+
+            const post = this.post[0];
+            console.log(post);
+
+            // const formData = {
+            //     grid1 : post.grid1,
+            //     grid2 : post.grid2, 
+            //     grid3 : post.grid3,
+            //     grid4 : post.grid4,
+            //     grid5 : post.grid5,
+            //     grid6 : post.grid6
+            //   }
+            //   console.log("ini formdata");
+            //   console.log(formData);
+              // const response = await API.updatePost(this.$route.params.id, formData);
+              
+              const response = await API.updatePost(post._id, post);
+              console.log(response);
+              this.$router.push({ name: 'Home', params: {message: response.message} });
+              
+          }
+      }
 }
 </script>
 
