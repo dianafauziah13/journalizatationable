@@ -24,15 +24,15 @@
                       flat
                     >
                       <span class="caption grey--text mt-n6">Entries</span>
-                      <h4 class="black--text mb-5">0</h4>
+                      <h4 class="black--text mb-5">{{post.length}}</h4>
                       <span class="caption grey--text">Questions</span>
-                      <h4 class="black--text">0</h4>
+                      <h4 class="black--text">6</h4>
                     </v-card>
                   </v-col>
                   <v-col cols="12" sm="5">
                     <v-card color="transparent" class="rounded-lg px-2" flat>
                       <span class="caption grey--text mt-n6">Grids</span>
-                      <h4 class="black--text mb-5">0</h4>
+                      <h4 class="black--text mb-5">{{post.length * 6}}</h4>
                       <span class="caption grey--text">Photos</span>
                       <h4 class="black--text">0</h4>
                     </v-card>
@@ -42,8 +42,19 @@
 </template>
 
 <script>
-export default {
+import API from '@/api';
 
+export default {
+  data() {
+        return {
+            post : [],
+        }
+  },
+    async created() {
+        const response = await API.getAllPosts();
+        this.post = response;
+        console.log(this.post)       
+    }
 }
 </script>
 
