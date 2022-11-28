@@ -130,8 +130,8 @@
                   </v-container>
 
 
-                  <v-btn @click= "updateForm()" color="#C0325F" class="withoutupercase ml-5">
-                      <v-icon left>fas fa-plus</v-icon>
+                  <v-btn @click= "updateForm()" color="#C0325F" class="withoutupercase ml-3">
+                      <v-icon left>mdi-pen</v-icon>
                       Edit Journal
                   </v-btn>
                 </v-sheet>

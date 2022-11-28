@@ -1,7 +1,7 @@
 <template>
   <v-app-bar color="#F999B7" app dark flat >
     <v-icon color="black">mdi-arrow-left-thick</v-icon>
-      <h4 class="black--text ml-3 mb-3 mt-3">Journalizetationable</h4> 
+      <h4 class="black--text ml-3 mb-3 mt-3">Journalizeritationable</h4> 
     
     <v-spacer></v-spacer>
 

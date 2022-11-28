@@ -59,8 +59,6 @@ export default {
     items: [
       { icon: "mdi-home-outline" },
       { icon: "mdi-book-outline" },
-      { icon: "mdi-comment-quote-outline" },
-      { icon: "mdi-help-circle-outline" },
       { icon: "mdi-information-outline"},
     ],
   }),
