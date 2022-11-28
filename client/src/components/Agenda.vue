@@ -11,16 +11,22 @@
                   <v-btn icon class="ma-2" @click="getDate(-1)">
                     <v-icon>mdi-chevron-left</v-icon>
                   </v-btn>
-                  <input placeholder="my story at" v-model="date">
-                  <v-select
-                    v-model="date"
-                    :items="types"
-                    dense
-                    outlined
-                    hide-details
-                    class="ma-2"
-                    label="Today's is ?"
-                  ></v-select>
+                  <!-- <input placeholder="my story at" v-model="date"> -->
+                  <v-col
+                    cols="12"
+                    sm="6"
+                    md="4"
+                  >
+                    <v-text-field
+                      label="Today Is"
+                      placeholder="Dense & Rounded"
+                      filled
+                      rounded
+                      dense
+                      v-model="date"
+                      prepend-icon="mdi-map-marker"
+                    ></v-text-field>
+                  </v-col>
                   <!-- <v-select
                     v-model="mode"
                     :items="modes"
