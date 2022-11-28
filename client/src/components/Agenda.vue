@@ -1,10 +1,15 @@
 <template>
     <v-card  class="rounded-lg" flat>
-            <v-row justify="center" class="pt-2 rounded-lg mt-2">
+
+            <v-row align="center" class="rounded-lg my-2 ml-1">
               <v-date-picker
                 v-model="date"
                 color="#C0325F"
-                width="260"
+                full-width
+                :landscape="$vuetify.breakpoint.smAndUp"
+                @change="getDate()"
+                show-adjacent-months
+
               ></v-date-picker>
             </v-row>
                 <v-sheet tile height="54" class="d-flex">
@@ -42,7 +47,12 @@
                   </v-btn>
                 </v-sheet>
                 <v-sheet height="600">
-                  <v-container class="bg-surface-variant" v-for="post in post" :key="post.created">
+
+                  <v-container v-if="post.length===0" class="bg-surface-variant ma-3">
+                    <h2>You're not submitted a journal today!</h2>
+                  </v-container>
+                  <v-container v-else class="bg-surface-variant" v-for="post in post" :key="post.created">
+
                     <v-row no-gutters >
                       <v-col >
                         <v-sheet class="pa-1 ma-1">
@@ -136,7 +146,12 @@
                   </v-container>
 
 
-                  <v-btn @click= "updateForm()" color="#C0325F" class="withoutupercase ml-3">
+                  <v-btn v-if="post.length===0" to ="/story" color="#C0325F" class="withoutupercase ml-3">
+                      <v-icon left>mdi-pen</v-icon>
+                      Add Journal
+                  </v-btn>
+                  <v-btn v-else @click= "updateForm()" color="#C0325F" class="withoutupercase ml-3">
+
                       <v-icon left>mdi-pen</v-icon>
                       Edit Journal
                   </v-btn>
@@ -191,16 +206,21 @@ export default {
               const mydate = newDate.add(day, "day").format("YYYY-MM-DD");
               this.date = mydate;
               this.post = await API.getPostByDate(this.date);
+
+              console.log(this.post)
+
             },
             async updateForm() {
 
               const post = this.post[0];
               console.log(post);
-                
+
+               
               const response = await API.updatePost(post._id, post);
               console.log(response);
               this.$router.push({ name: 'Home', params: {message: response.message} });
-                
+              alert('Edit Data Success!!')       
+
             }
         }
 }
