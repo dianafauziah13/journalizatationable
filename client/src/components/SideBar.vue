@@ -6,8 +6,8 @@
     mini-variant
     mini-variant-width="80"
   >
-    <v-avatar class="d-block text-center mx-auto mt-4 mb-16" color="" size="40">
-      <v-icon color="white" x-large>fab fa-artstation</v-icon>
+    <v-avatar class="d-block text-center mx-auto mt-4 mb-16" size="40">
+      <v-icon color="#C0325F" x-large>mdi-artstation</v-icon>
     </v-avatar>
 
     <!-- <v-list flat class="mt-16">
@@ -22,17 +22,20 @@
           <v-list-item-icon>
             <v-icon
               v-text="item.icon"
-              color="white"
+              color="#C0325F"
+              large
             ></v-icon>
           </v-list-item-icon>
         </v-list-item>
       </v-list-item-group>
+
     </v-list> -->
     <v-btn icon class="home" ><v-icon large color="#C0325F">mdi-home-outline</v-icon></v-btn>
     <v-btn icon class="book" ><v-icon large color="#C0325F">mdi-book-outline</v-icon></v-btn>
     <v-btn icon class="information" ><v-icon large color="#C0325F">mdi-information-outline</v-icon></v-btn>
     <v-btn icon class="cog" to="/signup"><v-icon large color="#C0325F">mdi-cog</v-icon></v-btn>
     <!-- <router-link to="/signup"><v-icon class="information" color="white">-mdi-information-circle</v-icon></router-link> -->
+
   </v-navigation-drawer>
 </template>
 
@@ -44,15 +47,20 @@ export default {
   data: () => ({
     selectedItem: 3,
     drawer: null,
+
   }),
 };
 </script>
 <style>
 .border {
-  margin-left: 12px;
-  margin-right: 12px;
-  background: #529DFF;
-  border-radius: 50%;
+  /* margin-left: 5px;
+  margin-right: 5px; */
+  /* border-radius: 100%; */
+  /* background: #F999B7; */
+  background: white;
+  /* border-radius: 0%;
+  margin-left: 0px;
+  margin-right: 0px; */
   text-decoration: none;
 }
 .v-list-item-group .v-list-item--active {

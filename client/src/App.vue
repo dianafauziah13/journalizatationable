@@ -1,6 +1,32 @@
 <template>
   <v-app>
-    <v-app-bar
+    <v-app-bar color="#F999B7" app dark flat >
+    <router-link 
+    to ="/"
+    tag="v-icon"
+    >
+      <v-icon color="black">mdi-arrow-left-thick</v-icon>
+    </router-link>
+        <h4 class="black--text ml-3 mb-3 mt-3">Journalizeritationable</h4> 
+    
+    <v-spacer></v-spacer>
+
+      <h4 class="black--text text--lighten-2 mt-3 mb-3">History</h4>
+    
+
+    <v-icon x-large color="#FEE3EC" class="ml-1">mdi-menu-down</v-icon>
+
+<v-badge dot overlap color="green" class="ml-1 mr-3" dark>
+    <v-avatar>
+         <v-icon color="#C0325F" large>mdi-bell</v-icon>
+    </v-avatar>     
+</v-badge>
+
+    <v-avatar>
+         <v-icon class="mr-2" color="#C0325F" large>mdi-account-circle-outline</v-icon>
+    </v-avatar>
+  </v-app-bar>
+    <!-- <v-app-bar
       app
       color="primary"
       dark
@@ -35,7 +61,7 @@
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
-    </v-app-bar>
+    </v-app-bar> -->
 
     <v-main>
       <router-view/>

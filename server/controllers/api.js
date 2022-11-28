@@ -2,6 +2,7 @@ const Post = require('../models/posts.js');
 const fs = require('fs');
 const User = require('../models/user');
 const posts = require('../models/posts.js');
+const mongo = require('mongodb');
 
 module.exports = class API {
     // fetch all journals
@@ -10,6 +11,24 @@ module.exports = class API {
         try {
             const user = await User.findOne({token:token});
             const posts = await Post.find({user_id:user.id});
+            res.status(200).json(posts);
+        } catch (error) {
+            res.status(404).json({ message: error.message })
+        }
+    }
+
+    static async fetchAllJournalsByDate(req, res) {
+        const token = req.headers.token;
+        const date = req.params.date;
+        let afterDate = date.split('-')
+        afterDate[2] = (parseInt(afterDate[2]) + 1).toString()
+        afterDate = afterDate.join('-')
+        console.log(afterDate)
+
+        try {
+            const user = await User.findOne({token:token});
+            const posts = await Post.find({user_id:user.id, created: { $gte: date, $lte: afterDate }});
+
             res.status(200).json(posts);
         } catch (error) {
             res.status(404).json({ message: error.message })
@@ -46,12 +65,13 @@ module.exports = class API {
     }
 
     static async manageJournals(req, res) {
-        const id = req.params.id;
+        const id = mongo.ObjectID(req.params.id);
+        // const id = req.params.id;
         const token = req.headers.token;
         const user = await User.findOne({token:token});
         const newPost = req.body;
         try {
-            await Post.findOneAndUpdate({token:user.token, id:id},newPost);
+            await Post.findOneAndUpdate({token:user.token, _id:id},newPost);
             // await Post.findByIdAndUpdate(id, newPost);
             res.status(200).json({ message: "Successfully update your Journal" })
         } catch (error) {

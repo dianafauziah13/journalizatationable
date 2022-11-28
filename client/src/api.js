@@ -12,6 +12,12 @@ export default class API {
         const res = await axios.get(`${url}/${id}`);
         return res.data;
     }
+
+    static async getPostByDate(date){
+        const res = await axios.get(`${url}/date/${date}`);
+        return res.data;
+    }
+    
     // to insert post into database
     static async addPost(post){
         console.log(post);
@@ -20,6 +26,8 @@ export default class API {
     }
     // to update post into database
     static async updatePost(id, post){
+        console.log("ini id",id);
+        console.log(post);
         const res = await axios.patch(`${url}/${id}`, post);
         return res.data;
     }

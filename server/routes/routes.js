@@ -18,6 +18,7 @@ const API = require('../controllers/api');
 // }).single("image")
 
 router.get('/', API.fetchAllJournals)
+router.get('/date/:date', API.fetchAllJournalsByDate)
 router.get('/:id', API.fetchPostByID)
 // router.post('/', upload, API.createJournals)
 // router.patch('/:id', upload, API.manageJournals)

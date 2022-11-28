@@ -1,5 +1,6 @@
 <template>
     <v-card  class="rounded-lg" flat>
+
             <v-row align="center" class="rounded-lg my-2 ml-1">
               <v-date-picker
                 v-model="date"
@@ -8,22 +9,30 @@
                 :landscape="$vuetify.breakpoint.smAndUp"
                 @change="getDate()"
                 show-adjacent-months
+
               ></v-date-picker>
             </v-row>
                 <v-sheet tile height="54" class="d-flex">
-                  <v-btn icon class="ma-2">
+                  <v-btn icon class="ma-2" @click="getDate(-1)">
                     <v-icon>mdi-chevron-left</v-icon>
                   </v-btn>
-                  <v-select
-                    v-model="type"
-                    :items="types"
-                    dense
-                    outlined
-                    hide-details
-                    class="ma-2"
-                    label="Today's feeling"
-                  ></v-select>
-                  <v-select
+                  <!-- <input placeholder="my story at" v-model="date"> -->
+                  <v-col
+                    cols="12"
+                    sm="6"
+                    md="4"
+                  >
+                    <v-text-field
+                      label="Today Is"
+                      placeholder="Dense & Rounded"
+                      filled
+                      rounded
+                      dense
+                      v-model="date"
+                      prepend-icon="mdi-map-marker"
+                    ></v-text-field>
+                  </v-col>
+                  <!-- <v-select
                     v-model="mode"
                     :items="modes"
                     dense
@@ -32,102 +41,117 @@
                     label="Today's Weather"
                     class="ma-2"
                   ></v-select>
-                  <v-spacer></v-spacer>
-                  <v-btn icon class="ma-2" >
+                  <v-spacer></v-spacer> -->
+                  <v-btn icon class="ma-2" @click="getDate(1)">
                     <v-icon>mdi-chevron-right</v-icon>
                   </v-btn>
                 </v-sheet>
                 <v-sheet height="600">
+
                   <v-container v-if="post.length===0" class="bg-surface-variant ma-3">
                     <h2>You're not submitted a journal today!</h2>
                   </v-container>
                   <v-container v-else class="bg-surface-variant" v-for="post in post" :key="post.created">
+
                     <v-row no-gutters >
                       <v-col >
                         <v-sheet class="pa-1 ma-1">
-                          <v-textarea  
-                            class="pinky"
-                            background-color="#FEE3EC"
+                          <v-textarea
+                            class="greyy"
+                            color="cyan"
                             auto-grow
                             variant="outlined"
                             rows="5"
                             clearable
-                            label="How are you today?"
-                          >{{posts.grid1}}</v-textarea>
+                            label="How are you today"
+                            v-model="post.grid1"
+                            :rules="rules"
+                          ></v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            class="pinky"
-                            background-color="#FEE3EC"
+                            class="greyy"
+                            color="cyan"
                             auto-grow
                             rows="5"
                             clearable
                             label="What can i do to make better future"
-                          >{{posts.grid2}}</v-textarea>
+                            v-model="post.grid2"
+                            :rules="rules"
+                          ></v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            class="pinky"
-                            background-color="#FEE3EC"
+                            class="greyy"
+                            color="cyan"
                             auto-grow
                             rows="5"
                             clearable
                             label="What have i done with my family today"
-                          >{{posts.grid3}}</v-textarea>
+                            v-model="post.grid3"
+                            :rules="rules"
+                          ></v-textarea>
                         </v-sheet>
                       </v-col>
 
-                      <v-responsive width="100%"></v-responsive>
+                    <v-responsive width="100%"></v-responsive>
 
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            class="pinky"
-                            background-color="#FEE3EC"
+                            class="greyy"
+                            color="cyan"
                             auto-grow
                             rows="5"
                             clearable
                             label="Problem that i encounter today"
-                          >{{posts.grid4}}</v-textarea>
+                            v-model="post.grid4"
+                            :rules="rules"
+                          ></v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            class="pinky"
-                            background-color="#FEE3EC"
+                            class="greyy"
+                            color="cyan"
                             auto-grow
                             rows="5"
                             clearable
                             label="Activities that i do to make me happy today"
-                          >{{posts.grid5}}</v-textarea>
+                            v-model="post.grid5"
+                            :rules="rules"
+                          ></v-textarea>
                         </v-sheet>
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
                           <v-textarea
-                            class="pinky"
-                            background-color="#FEE3EC"
+                            class="greyy"
+                            color="cyan"
                             auto-grow
                             rows="5"
                             clearable
                             label="Word to describe today"
-                            margin="20px"
-                          >{{posts.grid6}}</v-textarea>
+                            v-model="post.grid6"
+                            :rules="rules"
+                          ></v-textarea>
                         </v-sheet>
                       </v-col>
                     </v-row>
                   </v-container>
+
 
                   <v-btn v-if="post.length===0" to ="/story" color="#C0325F" class="withoutupercase ml-3">
                       <v-icon left>mdi-pen</v-icon>
                       Add Journal
                   </v-btn>
                   <v-btn v-else @click= "updateForm()" color="#C0325F" class="withoutupercase ml-3">
+
                       <v-icon left>mdi-pen</v-icon>
                       Edit Journal
                   </v-btn>
@@ -138,6 +162,7 @@
 
 <script>
 import API from '@/api';
+import moment from 'moment'
 
 export default { 
   data() {
@@ -181,17 +206,21 @@ export default {
               const mydate = newDate.add(day, "day").format("YYYY-MM-DD");
               this.date = mydate;
               this.post = await API.getPostByDate(this.date);
+
               console.log(this.post)
+
             },
             async updateForm() {
 
               const post = this.post[0];
               console.log(post);
+
                
               const response = await API.updatePost(post._id, post);
               console.log(response);
               this.$router.push({ name: 'Home', params: {message: response.message} });
-              alert('Edit Data Success!!')
+              alert('Edit Data Success!!')       
+
             }
         }
 }
@@ -199,16 +228,11 @@ export default {
 
 <style>
 .greyy{
-  background-color: #eee6e6;
-  border-radius: 5px;
+background-color: #eee6e6;
+border-radius: 5px;
 }
 .v-btn.withoutupercase {
-  text-transform: none !important;
-  color: white;
-}
-.pinky{
-  background-color: #FEE3EC;
-  border-radius: 5px;
-  
+text-transform: none !important;
+color: white;
 }
 </style>
