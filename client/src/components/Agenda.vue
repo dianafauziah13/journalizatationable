@@ -29,7 +29,7 @@
                       rounded
                       dense
                       v-model="date"
-                      prepend-icon="mdi-map-marker"
+                      prepend-icon="mdi-calendar"
                     ></v-text-field>
                   </v-col>
                   <!-- <v-select
@@ -151,7 +151,6 @@
                       Add Journal
                   </v-btn>
                   <v-btn v-else @click= "updateForm()" color="#C0325F" class="withoutupercase ml-3">
-
                       <v-icon left>mdi-pen</v-icon>
                       Edit Journal
                   </v-btn>
@@ -182,14 +181,6 @@ export default {
             
       }
 },
-  // async created() {
-  //     const response = await API.getPostByDate(this.chooseDate);
-  //     // const response = await API.getAllPosts()
-  //     // const response = await API.getPostByID(this.$route.params.id);
-  //     this.post = response;
-  //     console.log(this.post)
-  //     console.log(this.chooseDate)
-
 
     async created() {
         const response = await API.getPostByDate(this.chooseDate);

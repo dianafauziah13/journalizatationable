@@ -30,7 +30,12 @@
       </v-list-item-group>
 
     </v-list> -->
-    <v-btn icon class="home" ><v-icon large color="#C0325F">mdi-home-outline</v-icon></v-btn>
+    <router-link
+    to ="/"
+    tag="v-btn"
+    >
+      <v-btn icon class="home" ><v-icon large color="#C0325F">mdi-home-outline</v-icon></v-btn>
+    </router-link>
     <v-btn icon class="book" ><v-icon large color="#C0325F">mdi-book-outline</v-icon></v-btn>
     <v-btn icon class="information" ><v-icon large color="#C0325F">mdi-information-outline</v-icon></v-btn>
     <v-btn icon class="cog" to="/signup"><v-icon large color="#C0325F">mdi-cog</v-icon></v-btn>
