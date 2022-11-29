@@ -12,9 +12,11 @@
 
               ></v-date-picker>
             </v-row>
-                <v-sheet tile height="54" class="d-flex">
-                  <v-btn icon class="ma-2" @click="getDate(-1)">
-                    <v-icon large>mdi-chevron-left</v-icon>
+            <br>
+            <br>
+                <v-sheet tile height="54" class="d-flex justify-start mb-10">
+                  <v-btn icon class="mt-5 mr-1" @click="getDate(-1)">
+                    <v-icon color="pink" large>mdi-chevron-left</v-icon>
                   </v-btn>
                   <!-- <input placeholder="my story at" v-model="date"> -->
                   <v-col
@@ -31,6 +33,7 @@
                       v-model="date"
                       prepend-icon="mdi-calendar"
                       min-width="auto"
+                      background-color="#FEE3EC"
                     ></v-text-field>
                   </v-col>
                   <!-- <v-select
@@ -43,28 +46,34 @@
                     class="ma-2"
                   ></v-select>
                   <v-spacer></v-spacer> -->
-                  <v-btn icon class="ma-2" @click="getDate(1)">
-                    <v-icon large >mdi-chevron-right</v-icon>
+                  <v-btn icon class="mt-5 ml-1" @click="getDate(1)">
+                    <v-icon color="pink" large >mdi-chevron-right</v-icon>
                   </v-btn>
                 </v-sheet>
                 <v-sheet height="600">
 
-                  <v-container v-if="post.length===0" class="bg-surface-variant ma-3">
-                    <h2>You're not submitted a journal today!</h2>
+                  <v-container v-if="post.length===0" class="bg-surface-variant ma-5">
+                    <h2 class="grey--text font-weight-bold d-flex justify-center">You're not submitted a journal today!</h2>
                   </v-container>
                   <v-container v-else class="bg-surface-variant" v-for="post in post" :key="post.created">
 
                     <v-row no-gutters >
                       <v-col >
                         <v-sheet class="pa-1 ma-1">
+                          <h7 class="pink--text font-weight-bold mb-4 text-truncate d-inline-block" style="max-width: 270px;">How are you today?</h7>
                           <v-textarea
-                            class="greyy"
-                            color="cyan"
-                            auto-grow
+                           label="Input text here"
+                            background-color="#FEE3EC"
                             variant="outlined"
+                            maxlength="200"
                             rows="5"
+                            filled
+                            outlined
+                            auto-grow
                             clearable
-                            label="How are you today"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid1"
                             :rules="rules"
                           ></v-textarea>
@@ -72,13 +81,20 @@
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
+                          <h7 class="pink--text font-weight-bold mb-4 text-truncate d-inline-block" style="max-width: 270px;">What can i do to make better future?</h7>
                           <v-textarea
-                            class="greyy"
-                            color="cyan"
-                            auto-grow
+                           label="Input text here"
+                            background-color="#FEE3EC"
+                            variant="outlined"
+                            maxlength="200"
                             rows="5"
+                            filled
+                            outlined
+                            auto-grow
                             clearable
-                            label="What can i do to make better future"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid2"
                             :rules="rules"
                           ></v-textarea>
@@ -86,30 +102,44 @@
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
+                          <h7 class="pink--text font-weight-bold mb-4 text-truncate d-inline-block" style="max-width: 270px;">What have i done with my family today?</h7>
                           <v-textarea
-                            class="greyy"
-                            color="cyan"
-                            auto-grow
+                           label="Input text here"
+                            background-color="#FEE3EC"
+                            variant="outlined"
+                            maxlength="200"
                             rows="5"
+                            filled
+                            outlined
+                            auto-grow
                             clearable
-                            label="What have i done with my family today"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid3"
                             :rules="rules"
                           ></v-textarea>
                         </v-sheet>
                       </v-col>
 
-                    <v-responsive width="100%"></v-responsive>
+                      <v-responsive width="100%"></v-responsive>
 
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
+                          <h7 class="pink--text font-weight-bold mb-4 text-truncate d-inline-block" style="max-width: 270px;">Problem that i encounter today</h7>
                           <v-textarea
-                            class="greyy"
-                            color="cyan"
-                            auto-grow
+                           label="Input text here"
+                            background-color="#FEE3EC"
+                            variant="outlined"
+                            maxlength="200"
                             rows="5"
+                            filled
+                            outlined
+                            auto-grow
                             clearable
-                            label="Problem that i encounter today"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid4"
                             :rules="rules"
                           ></v-textarea>
@@ -117,13 +147,20 @@
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
+                          <h7 class="pink--text font-weight-bold mb-4 text-truncate d-inline-block" style="max-width: 270px;">Activities that i do to make me happy today</h7>
                           <v-textarea
-                            class="greyy"
-                            color="cyan"
-                            auto-grow
+                           label="Input text here"
+                            background-color="#FEE3EC"
+                            variant="outlined"
+                            maxlength="200"
                             rows="5"
+                            filled
+                            outlined
+                            auto-grow
                             clearable
-                            label="Activities that i do to make me happy today"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid5"
                             :rules="rules"
                           ></v-textarea>
@@ -131,13 +168,20 @@
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 ma-1">
+                          <h7 class="pink--text font-weight-bold mb-4 text-truncate d-inline-block" style="max-width: 270px;">Word to describe today</h7>
                           <v-textarea
-                            class="greyy"
-                            color="cyan"
-                            auto-grow
+                           label="Input text here"
+                            background-color="#FEE3EC"
+                            variant="outlined"
+                            maxlength="200"
                             rows="5"
+                            filled
+                            outlined
+                            auto-grow
                             clearable
-                            label="Word to describe today"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid6"
                             :rules="rules"
                           ></v-textarea>
