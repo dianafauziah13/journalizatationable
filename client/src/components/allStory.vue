@@ -16,6 +16,7 @@
                             label="Date is"
                             placeholder="Date"
                             filled
+                            disabled
  
                             dense
                             v-model="post.created"

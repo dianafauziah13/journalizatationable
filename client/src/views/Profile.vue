@@ -3,15 +3,17 @@
     <SideBar />
         <v-card  class="d-flex justify-left elevation-0" flat>
             <div class="profile">
-                <h1>Profile</h1>
-                <v-file-input 
+                <h1 class="pb-3">Profile</h1>
+                <v-container v-if="image===null"><v-file-input 
                     @change="Preview_image"
                     v-model="image"
-                    label="Select Picture"
-                    width="150%"
+                    placeholder="Select Picture"
+                    prepend-icon="mdi-camera"
+                    dense
                     >
-                </v-file-input>
+                </v-file-input></v-container>
                 <v-img
+                    lazy-src="url"
                     max-height="180"
                     max-width="200"
                     :src="url"
