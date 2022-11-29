@@ -14,12 +14,12 @@
             </v-row>
                 <v-sheet tile height="54" class="d-flex">
                   <v-btn icon class="ma-2" @click="getDate(-1)">
-                    <v-icon>mdi-chevron-left</v-icon>
+                    <v-icon large>mdi-chevron-left</v-icon>
                   </v-btn>
                   <!-- <input placeholder="my story at" v-model="date"> -->
                   <v-col
                     cols="12"
-                    sm="6"
+                    sm="4"
                     md="4"
                   >
                     <v-text-field
@@ -30,6 +30,7 @@
                       dense
                       v-model="date"
                       prepend-icon="mdi-calendar"
+                      min-width="auto"
                     ></v-text-field>
                   </v-col>
                   <!-- <v-select
@@ -43,7 +44,7 @@
                   ></v-select>
                   <v-spacer></v-spacer> -->
                   <v-btn icon class="ma-2" @click="getDate(1)">
-                    <v-icon>mdi-chevron-right</v-icon>
+                    <v-icon large >mdi-chevron-right</v-icon>
                   </v-btn>
                 </v-sheet>
                 <v-sheet height="600">
@@ -154,7 +155,7 @@
                       <v-icon left>mdi-pen</v-icon>
                       Edit Journal
                   </v-btn>
-                  <v-btn v-if="post.length!==0" @click= "Delete()" color="#EA85B6" class="withoutupercase ml-3">
+                  <v-btn v-if="post.length!==0" @click= "Delete()" color="#C0325F" class="withoutupercase ml-3">
                       <v-icon left>mdi-delete</v-icon>
                       Delete
                   </v-btn>

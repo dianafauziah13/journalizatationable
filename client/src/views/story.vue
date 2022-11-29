@@ -34,14 +34,20 @@
                     <v-row no-gutters>
                       <v-col>
                         <v-sheet class="pa-1 mt-10 mr-5">
+                          <h5 class="pink--text font-weight-bold mb-4">How are you today?</h5>
                           <v-textarea
+                           label="Input text here"
                             background-color="#FEE3EC"
+                            variant="outlined"
+                            maxlength="200"
+                            rows="5"
+                            filled
                             outlined
                             auto-grow
-                            variant="outlined"
-                            rows="5"
                             clearable
-                            label="How are you today"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid1"
                             :rules="rules"
                           ></v-textarea>
@@ -49,13 +55,20 @@
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 mt-10">
+                          <h5 class="pink--text font-weight-bold mb-4">What can i do to make better future?</h5>
                           <v-textarea
-                           background-color="#FEE3EC"
+                           label="Input text here"
+                            background-color="#FEE3EC"
+                            variant="outlined"
+                            maxlength="200"
+                            rows="5"
+                            filled
                             outlined
                             auto-grow
-                            rows="5"
                             clearable
-                            label="What can i do to make better future"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid2"
                             :rules="rules"
                           ></v-textarea>
@@ -63,13 +76,20 @@
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 mt-10 ml-5">
+                          <h5 class="pink--text font-weight-bold mb-4">What have i done with my family today?</h5>
                           <v-textarea
-                           background-color="#FEE3EC"
+                           label="Input text here"
+                            background-color="#FEE3EC"
+                            variant="outlined"
+                            maxlength="200"
+                            rows="5"
+                            filled
                             outlined
                             auto-grow
-                            rows="5"
                             clearable
-                            label="What have i done with my family today"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid3"
                             :rules="rules"
                           ></v-textarea>
@@ -80,13 +100,20 @@
 
                       <v-col>
                         <v-sheet class="pa-1 mt-5 mr-5">
+                          <h5 class="pink--text font-weight-bold mb-4">Problem that i encounter today</h5>
                           <v-textarea
+                           label="Input text here"
                             background-color="#FEE3EC"
+                            variant="outlined"
+                            maxlength="200"
+                            rows="5"
+                            filled
                             outlined
                             auto-grow
-                            rows="5"
                             clearable
-                            label="Problem that i encounter today"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid4"
                             :rules="rules"
                           ></v-textarea>
@@ -94,13 +121,20 @@
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 mt-5">
+                          <h5 class="pink--text font-weight-bold mb-4">Activities that i do to make me happy today</h5>
                           <v-textarea
+                           label="Input text here"
                             background-color="#FEE3EC"
+                            variant="outlined"
+                            maxlength="200"
+                            rows="5"
+                            filled
                             outlined
                             auto-grow
-                            rows="5"
                             clearable
-                            label="Activities that i do to make me happy today"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid5"
                             :rules="rules"
                           ></v-textarea>
@@ -108,13 +142,20 @@
                       </v-col>
                       <v-col>
                         <v-sheet class="pa-1 ml-5 mt-5">
+                          <h5 class="pink--text font-weight-bold mb-4">Word to describe today</h5>
                           <v-textarea
+                           label="Input text here"
                             background-color="#FEE3EC"
+                            variant="outlined"
+                            maxlength="200"
+                            rows="5"
+                            filled
                             outlined
                             auto-grow
-                            rows="5"
                             clearable
-                            label="Word to describe today"
+                            counter
+                            full-width
+                            single-line
                             v-model="post.grid6"
                             :rules="rules"
                           ></v-textarea>
