@@ -1,4 +1,6 @@
 <template>
+  <v-app>
+    <SideBar/>
     <v-card  class="rounded-lg" flat>
 
                   <v-container class="bg-surface-variant" >
@@ -114,11 +116,12 @@
                   </v-container>
                 
               </v-card>
-    
+  </v-app> 
 </template>
 
 <script>
 import API from '@/api';
+import SideBar from './SideBar.vue';
 
 export default { 
   data() {
@@ -134,6 +137,9 @@ export default {
         this.post = response;
         console.log(this.post)
         
+    },
+    components:{
+      SideBar
     },
         methods: {
 

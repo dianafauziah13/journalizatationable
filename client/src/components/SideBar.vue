@@ -7,7 +7,9 @@
     mini-variant-width="80"
   >
     <v-avatar class="d-block text-center mx-auto mt-4 mb-16" size="40">
-      <v-icon color="#C0325F" x-large>mdi-artstation</v-icon>
+      <v-img
+        src="@/assets/j4.png"
+      ></v-img>
     </v-avatar>
 
     <!-- <v-list flat class="mt-16">
@@ -42,7 +44,7 @@
     >
       <v-btn icon class="book" ><v-icon large color="#C0325F">mdi-book-outline</v-icon></v-btn>
     </router-link>
-    <v-btn icon class="information" ><v-icon large color="#C0325F">mdi-information-outline</v-icon></v-btn>
+    <v-btn icon class="information" to="/about"><v-icon large color="#C0325F">mdi-information-outline</v-icon></v-btn>
     <v-btn icon class="cog" to="/signup"><v-icon large color="#C0325F">mdi-cog</v-icon></v-btn>
     <!-- <router-link to="/signup"><v-icon class="information" color="white">-mdi-information-circle</v-icon></router-link> -->
 

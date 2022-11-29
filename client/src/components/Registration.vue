@@ -1,8 +1,9 @@
 <template>
+  <v-app>
+    <SideBar/>
     <div class="vue-tempalte">
-        <form>
+        <form class="ma-10">
             <h3>Register Account</h3>
- 
             <div class="form-group">
                 <label>First Name</label>
                 <input type="text" class="form-control form-control-lg"/>
@@ -28,20 +29,26 @@
                 <input type="password" class="form-control form-control-lg" />
             </div>
  
-            <button type="submit" class="btn btn-dark btn-lg btn-block">Register</button>
+            <button type="submit" class="btn btn-pink btn-lg btn-block mt-5">Register</button>
  
-            <p class="forgot-password text-right">
+            <p class="forgot-password text-left mt-5">
               Already have an account? 
               <router-link :to="{name: 'login'}">Login</router-link>
             </p>
         </form>
     </div>
+  </v-app>
 </template>
  
 <script>
+import SideBar from './SideBar.vue';
+
     export default {
         data() {
             return {}
+        },
+        components:{
+          SideBar,
         }
     }
 </script>
@@ -62,7 +69,13 @@ html,
   width: 100%;
   height: 100%;
 }
- 
+.form-control{
+  width: 40%;
+} 
+.btn-pink{
+  background-color: #C0325F;
+  color: #FFFFFF;
+}
 .navbar-light {
   background-color: #ffffff;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);

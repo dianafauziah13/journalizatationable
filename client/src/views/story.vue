@@ -1,4 +1,6 @@
-<template>
+<template> 
+  <v-app>
+    <SideBar/>
     <v-card  class="rounded-lg mt-10" flat >
                 <!-- <v-sheet tile height="54" width="1000" class="d-flex">
                   <v-btn icon class="ma-20">
@@ -127,11 +129,12 @@
 
                 <!-- </v-sheet> -->
               </v-card>
-    
+  </v-app>  
 </template>
 
 <script>
 import API from '@/api';
+import SideBar from "@/components/SideBar.vue";
 
     export default {
         data() {
@@ -146,6 +149,9 @@ import API from '@/api';
                     grid6: "",
                 }
             }
+        },
+        components: {
+            SideBar,
         },
         methods: {
             // selectFile(file){

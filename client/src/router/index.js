@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import SignIn from '../views/SignIn.vue'
 import story from '../views/story.vue'
 import allStory from '../components/allStory.vue'
+import about from '../views/About.vue'
 
 Vue.use(VueRouter)
 
@@ -37,7 +38,12 @@ const routes = [
     path: '/login',
     name: 'login',
     component: () => import('../components/Login.vue')
-  }
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: about
+  },
 ]
 
 const router = new VueRouter({
