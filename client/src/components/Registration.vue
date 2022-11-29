@@ -33,7 +33,7 @@
  
             <p class="forgot-password text-left mt-5">
               Already have an account? 
-              <router-link :to="{name: 'login'}">Login</router-link>
+              <router-link :to="{name: 'signin'}">Login</router-link>
             </p>
         </form>
     </div>
