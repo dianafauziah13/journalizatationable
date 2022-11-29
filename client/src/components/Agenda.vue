@@ -220,6 +220,7 @@ export default {
               console.log(response);
               this.$router.push({ name: 'Home', params: {message: response.message} });
               alert('Delete Data Success!!')       
+              window.location.reload();
 
             }
         }
