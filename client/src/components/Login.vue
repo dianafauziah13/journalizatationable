@@ -6,7 +6,7 @@
       <form class="login-right" @submit.prevent>
         <div class="h2">Login</div>
         <div class="form-group">
-          <input type="text" id="username" placeholder="email" v-model="username">
+          <input type="text" id="username" placeholder="Email" v-model="username">
           <label for="username">Username</label>    
         </div>
         <div class="form-group">
@@ -20,7 +20,7 @@
         <div class="button-area">
           <button class="btn btn-primary pull-right" @click="login()" >Login</button>
         </div>
-        <p class="forgot-password text-right mt-7 mb-4">
+        <p class="forgot-password text-right mt-4 mb-4">
                 Dont have an account?   
                 <router-link :to="{name: 'signup'}">Register</router-link>
         </p>
@@ -195,8 +195,8 @@
   }
   
   .login-wrapper {
-    width: 800px;
-    height: 440px;
+    width: 900px;
+    height: 520px;
     background-color: #fff;
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.2);
     border-radius: 4px;

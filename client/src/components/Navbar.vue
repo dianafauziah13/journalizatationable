@@ -26,7 +26,7 @@
          <v-icon color="#C0325F" large>mdi-bell</v-icon>
     </v-avatar>
     </v-badge>
-    <v-icon color="#C0325F" large>mdi-account-circle-outline</v-icon>
+    <v-btn icon to="/profile"><v-icon color="#C0325F" large>mdi-account-circle-outline</v-icon></v-btn>
     
 
    

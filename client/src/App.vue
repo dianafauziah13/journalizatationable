@@ -66,6 +66,7 @@
     <v-main>
       <router-view/>
     </v-main>
+    <center><p class="cp">Copyright @ 2022 J4 Interactive Studio. All right reserved</p></center>
   </v-app>
 </template>
 
@@ -79,3 +80,6 @@ export default {
   }),
 };
 </script>
+
+<style>
+</style>

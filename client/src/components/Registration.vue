@@ -203,7 +203,7 @@ input:placeholder-shown + label {
 
 .regist-wrapper {
   width: 800px;
-  height: 440px;
+  height: 520px;
   background-color: #fff;
   box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.2);
   border-radius: 4px;

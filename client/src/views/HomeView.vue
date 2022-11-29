@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <hello-world />
 </template>
 
@@ -12,4 +12,4 @@
       HelloWorld,
     },
   }
-</script>
+</script> -->

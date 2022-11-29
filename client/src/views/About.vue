@@ -76,7 +76,6 @@
                     </p>
                 </v-col>
             </v-row>
-            <center><p class="cp pt-5">Copyright @ 2022 J4 Interactive Studio. All right reserved</p></center>
         </div>
     </v-card>>
 
