@@ -36,7 +36,12 @@
     >
       <v-btn icon class="home" ><v-icon large color="#C0325F">mdi-home-outline</v-icon></v-btn>
     </router-link>
-    <v-btn icon class="book" ><v-icon large color="#C0325F">mdi-book-outline</v-icon></v-btn>
+    <router-link
+    to ="/all-story"
+    tag="v-btn"
+    >
+      <v-btn icon class="book" ><v-icon large color="#C0325F">mdi-book-outline</v-icon></v-btn>
+    </router-link>
     <v-btn icon class="information" ><v-icon large color="#C0325F">mdi-information-outline</v-icon></v-btn>
     <v-btn icon class="cog" to="/signup"><v-icon large color="#C0325F">mdi-cog</v-icon></v-btn>
     <!-- <router-link to="/signup"><v-icon class="information" color="white">-mdi-information-circle</v-icon></router-link> -->
