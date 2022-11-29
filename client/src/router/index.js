@@ -5,6 +5,7 @@ import story from '../views/story.vue'
 import allStory from '../components/allStory.vue'
 import about from '../views/About.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [

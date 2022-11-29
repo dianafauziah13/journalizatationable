@@ -6,7 +6,7 @@
       <form class="login-right" @submit.prevent>
         <div class="h2">Login</div>
         <div class="form-group">
-          <input type="text" id="username" placeholder="Username" v-model="username">
+          <input type="text" id="username" placeholder="email" v-model="username">
           <label for="username">Username</label>    
         </div>
         <div class="form-group">
@@ -36,7 +36,7 @@
     data() {
       return {
         rememberMe: false,
-        username: "",
+        email: "",
         password: ""
       };
     },
@@ -54,12 +54,12 @@
       login() {
         //we should handle errors in a more scalabe way, but this works for now
   
-        alert(this.username + " " + this.password + " " + this.rememberMe);
+        alert(this.email + " " + this.password + " " + this.rememberMe);
   
         axios
-          .post("http://api2.wisksolution.com/login", {
-            body: {
-              username: this.username,
+          .post("http://localhost:5000/api/login", {
+            User: {
+              email: this.email,
               password: this.password
             }
           })
@@ -83,6 +83,8 @@
   * {
     box-sizing: border-box;
     align-items: center;
+
+
   }
   
   html,
@@ -125,7 +127,7 @@
   input[type="text"],
   input[type="password"] {
     width: 100%;
-    height: 40px;
+    height: 20px;
     border-bottom: 1px solid #aaaaaa;
   }
   
