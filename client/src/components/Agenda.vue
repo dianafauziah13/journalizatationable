@@ -16,7 +16,7 @@
             <br>
                 <v-sheet tile height="54" class="d-flex justify-start mb-10">
                   <v-btn icon class="mt-5 mr-1" @click="getDate(-1)">
-                    <v-icon color="pink" large>mdi-chevron-left</v-icon>
+                    <v-icon color="grey" large>mdi-chevron-left</v-icon>
                   </v-btn>
                   <!-- <input placeholder="my story at" v-model="date"> -->
                   <v-col
@@ -28,12 +28,10 @@
                       label="Today Is"
                       placeholder="Dense & Rounded"
                       filled
-                      rounded
                       dense
                       v-model="date"
                       prepend-icon="mdi-calendar"
                       min-width="auto"
-                      background-color="#FEE3EC"
                     ></v-text-field>
                   </v-col>
                   <!-- <v-select
@@ -47,7 +45,7 @@
                   ></v-select>
                   <v-spacer></v-spacer> -->
                   <v-btn icon class="mt-5 ml-1" @click="getDate(1)">
-                    <v-icon color="pink" large >mdi-chevron-right</v-icon>
+                    <v-icon color="grey" large >mdi-chevron-right</v-icon>
                   </v-btn>
                 </v-sheet>
                 <v-sheet height="600">
