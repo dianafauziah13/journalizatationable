@@ -80,10 +80,10 @@ module.exports = class API {
     }
 
     static async deleteJournals(req, res) {
-        const id = req.params.id;
-        const user = await User.findOne({token:token});
+        const id = mongo.ObjectID(req.params.id);
+        // const user = await User.findOne({token:token});
         try {
-            const result = await Post.findOneAndDelete({token:user.token, id : id});
+            const result = await Post.findOneAndDelete({_id : id});
             // if (result.image != '') {
             //     try {
             //         fs.unlinkSync('./uploads/'+result.image);

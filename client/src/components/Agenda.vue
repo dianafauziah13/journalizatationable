@@ -146,13 +146,17 @@
                   </v-container>
 
 
-                  <v-btn v-if="post.length===0" to ="/story" color="#C0325F" class="withoutupercase ml-3">
+                  <!-- <v-btn v-if="post.length===0" to ="/story" color="#C0325F" class="withoutupercase ml-3">
                       <v-icon left>mdi-pen</v-icon>
                       Add Journal
-                  </v-btn>
-                  <v-btn v-else @click= "updateForm()" color="#C0325F" class="withoutupercase ml-3">
+                  </v-btn> -->
+                  <v-btn v-if="post.length!==0" @click= "updateForm()" color="#C0325F" class="withoutupercase ml-3">
                       <v-icon left>mdi-pen</v-icon>
                       Edit Journal
+                  </v-btn>
+                  <v-btn v-if="post.length!==0" @click= "Delete()" color="#EA85B6" class="withoutupercase ml-3">
+                      <v-icon left>mdi-delete</v-icon>
+                      Delete
                   </v-btn>
                 </v-sheet>
               </v-card>
@@ -202,15 +206,20 @@ export default {
 
             },
             async updateForm() {
-
               const post = this.post[0];
-              console.log(post);
-
-               
+              console.log(post); 
               const response = await API.updatePost(post._id, post);
               console.log(response);
               this.$router.push({ name: 'Home', params: {message: response.message} });
               alert('Edit Data Success!!')       
+
+            },
+            async Delete() {
+              const post = this.post[0];
+              const response = await API.deletePost(post._id);
+              console.log(response);
+              this.$router.push({ name: 'Home', params: {message: response.message} });
+              alert('Delete Data Success!!')       
 
             }
         }
