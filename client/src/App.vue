@@ -10,11 +10,10 @@
         <h4 class="black--text ml-3 mb-3 mt-3">Journalizeritationable</h4> 
     
     <v-spacer></v-spacer>
-
+<!-- 
       <h4 class="black--text text--lighten-2 mt-3 mb-3">History</h4>
-    
-
-    <v-icon x-large color="#FEE3EC" class="ml-1">mdi-menu-down</v-icon>
+  
+    <v-icon x-large color="#FEE3EC" class="ml-1">mdi-menu-down</v-icon> -->
 
 <v-badge dot overlap color="green" class="ml-1 mr-3" dark>
     <v-avatar>
