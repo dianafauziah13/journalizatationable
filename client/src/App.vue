@@ -10,58 +10,16 @@
         <h4 class="fontsig black--text ml-3 mb-3 mt-3">Journalizeritationable</h4> 
     
     <v-spacer></v-spacer>
-<!-- 
-      <h4 class="black--text text--lighten-2 mt-3 mb-3">History</h4>
-  
-    <v-icon x-large color="#FEE3EC" class="ml-1">mdi-menu-down</v-icon> -->
-
-<v-badge dot overlap color="green" class="ml-1 mr-3" dark>
-    <v-avatar>
+    <v-badge dot overlap color="green" class="ml-1 mr-3" dark>
+      <v-avatar>
          <v-icon color="#C0325F" large>mdi-bell</v-icon>
-    </v-avatar>     
-</v-badge>
+      </v-avatar>     
+    </v-badge>
 
     <v-avatar>
       <v-btn icon to="/profile"><v-icon color="#C0325F" large>mdi-account-circle-outline</v-icon></v-btn>
     </v-avatar>
   </v-app-bar>
-    <!-- <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar> -->
-
     <v-main>
       <router-view/>
     </v-main>

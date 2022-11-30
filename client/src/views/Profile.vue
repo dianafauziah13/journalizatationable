@@ -3,7 +3,7 @@
     <SideBar />
         <v-card  class="fontsig d-flex justify-left elevation-0" flat>
             <div class="profile">
-                <h1 class="pb-3">Profile</h1>
+                <h1>Account Profile</h1>
                 <v-container v-if="image===null"><v-file-input 
                     @change="Preview_image"
                     v-model="image"
@@ -19,7 +19,7 @@
                 ></v-img>
                 <h5 class="pt-5"><pre>Name      : {{profile.name}}</pre></h5>
                 <h5 class="pt-3"><pre>Email     : {{profile.email}}</pre></h5>
-                <h5 class="py-3"><pre>Password  : </pre></h5>
+                <h5 class="py-3"><pre>Bio       : </pre></h5>
                 <v-btn  color="#C0325F" class="withoutupercase rounded-lg">
                       <v-icon left>mdi-pen</v-icon>
                       Edit Profile
