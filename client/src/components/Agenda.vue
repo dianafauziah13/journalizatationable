@@ -26,7 +26,6 @@
                   >
                     <v-text-field
                       label="Today Is"
-                      placeholder="Dense & Rounded"
                       filled
                       dense
                       v-model="date"
@@ -65,6 +64,7 @@
                             variant="outlined"
                             maxlength="200"
                             rows="5"
+                            color="pink"
                             filled
                             outlined
                             auto-grow
@@ -73,7 +73,6 @@
                             full-width
                             single-line
                             v-model="post.grid1"
-                            :rules="rules"
                           ></v-textarea>
                         </v-sheet>
                       </v-col>
@@ -86,6 +85,7 @@
                             variant="outlined"
                             maxlength="200"
                             rows="5"
+                            color="pink"
                             filled
                             outlined
                             auto-grow
@@ -94,7 +94,6 @@
                             full-width
                             single-line
                             v-model="post.grid2"
-                            :rules="rules"
                           ></v-textarea>
                         </v-sheet>
                       </v-col>
@@ -107,6 +106,7 @@
                             variant="outlined"
                             maxlength="200"
                             rows="5"
+                            color="pink"
                             filled
                             outlined
                             auto-grow
@@ -115,7 +115,6 @@
                             full-width
                             single-line
                             v-model="post.grid3"
-                            :rules="rules"
                           ></v-textarea>
                         </v-sheet>
                       </v-col>
@@ -131,6 +130,7 @@
                             variant="outlined"
                             maxlength="200"
                             rows="5"
+                            color="pink"
                             filled
                             outlined
                             auto-grow
@@ -139,7 +139,6 @@
                             full-width
                             single-line
                             v-model="post.grid4"
-                            :rules="rules"
                           ></v-textarea>
                         </v-sheet>
                       </v-col>
@@ -152,6 +151,7 @@
                             variant="outlined"
                             maxlength="200"
                             rows="5"
+                            color="pink"
                             filled
                             outlined
                             auto-grow
@@ -160,7 +160,6 @@
                             full-width
                             single-line
                             v-model="post.grid5"
-                            :rules="rules"
                           ></v-textarea>
                         </v-sheet>
                       </v-col>
@@ -173,6 +172,7 @@
                             variant="outlined"
                             maxlength="200"
                             rows="5"
+                            color="pink"
                             filled
                             outlined
                             auto-grow
@@ -181,7 +181,6 @@
                             full-width
                             single-line
                             v-model="post.grid6"
-                            :rules="rules"
                           ></v-textarea>
                         </v-sheet>
                       </v-col>
