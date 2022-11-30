@@ -3,7 +3,7 @@
     <SideBar/>
     <v-card  class="rounded-lg" flat>
 
-                  <v-container class="bg-surface-variant" >
+                  <v-container class="fontsig bg-surface-variant" >
 
                     <v-row no-gutters v-for="post in post" :key="post._id">
                         <v-row class="mt-10">
@@ -16,7 +16,6 @@
                             label="Date is"
                             placeholder="Date"
                             filled
-                            disabled
  
                             dense
                             v-model="post.created"

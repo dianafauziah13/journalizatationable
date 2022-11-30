@@ -28,8 +28,8 @@
       <div class="button-area">
         <button class="btn btn-primary pull-right" @click="regist()" >regist</button>
       </div>
-      <p class="forgot-password text-right mt-2 mb-4">
-              have an account?   
+      <p class="forgot-password text-left mt-2 mb-4">
+              Already have an account?   
               <router-link :to="{name: 'signin'}">Login</router-link>
       </p>
     </form>
@@ -202,7 +202,7 @@ input:placeholder-shown + label {
 }
 
 .regist-wrapper {
-  width: 800px;
+  width: 900px;
   height: 520px;
   background-color: #fff;
   box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.2);

@@ -1,9 +1,9 @@
 <template id="login-form">
-    <div class="login-wrapper">
+    <div class="login-wrapper fontsig">
       <div class="login-left">
         <img  lazy-src="@/assets/logojournal.png" src="@/assets/logojournal.png" max-height="160" max-width="160">
       </div>
-      <form class="login-right" @submit.prevent>
+      <form class="login-right mt-10" @submit.prevent>
         <div class="h2">Login</div>
         <div class="form-group">
           <input type="text" id="username" placeholder="Email" v-model="username">

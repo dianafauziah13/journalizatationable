@@ -1,5 +1,5 @@
 <template>
-    <v-card  class="rounded-lg" flat>
+    <v-card  class="fontsig rounded-lg" flat>
 
             <v-row align="center" class="rounded-lg my-2 ml-1">
               <v-date-picker
@@ -51,7 +51,7 @@
                 <v-sheet height="600">
 
                   <v-container v-if="post.length===0" class="bg-surface-variant ma-5">
-                    <h2 class="grey--text font-weight-bold d-flex justify-center">You're not submitted a journal today!</h2>
+                    <h2 class="fontsig grey--text font-weight-bold d-flex justify-center">You're not submitted a journal today!</h2>
                   </v-container>
                   <v-container v-else class="bg-surface-variant" v-for="post in post" :key="post.created">
 
@@ -210,6 +210,7 @@
 import API from '@/api';
 import moment from 'moment'
 
+
 export default { 
   data() {
         return {
@@ -271,6 +272,11 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@;500;600;700&display=swap');
+
+.fontsig{
+  font-family: 'Signika', sans-serif;
+}
 .greyy{
 background-color: #eee6e6;
 border-radius: 5px;
@@ -279,4 +285,5 @@ border-radius: 5px;
 text-transform: none !important;
 color: white;
 }
+
 </style>

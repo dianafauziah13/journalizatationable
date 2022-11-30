@@ -7,7 +7,7 @@
     >
       <v-icon color="black">mdi-arrow-left-thick</v-icon>
     </router-link>
-        <h4 class="black--text ml-3 mb-3 mt-3">Journalizeritationable</h4> 
+        <h4 class="fontsig black--text ml-3 mb-3 mt-3">Journalizeritationable</h4> 
     
     <v-spacer></v-spacer>
 <!-- 
@@ -22,7 +22,7 @@
 </v-badge>
 
     <v-avatar>
-         <v-icon class="mr-2" color="#C0325F" large>mdi-account-circle-outline</v-icon>
+      <v-btn icon to="/profile"><v-icon color="#C0325F" large>mdi-account-circle-outline</v-icon></v-btn>
     </v-avatar>
   </v-app-bar>
     <!-- <v-app-bar
@@ -81,4 +81,10 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins&family=Signika:wght@600&display=swap');
+
+.fontsig{
+  font-family: 'Signika', sans-serif;
+
+}
 </style>

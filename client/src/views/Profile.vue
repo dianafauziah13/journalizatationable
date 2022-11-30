@@ -1,7 +1,7 @@
 <template>
     <v-app>  
     <SideBar />
-        <v-card  class="d-flex justify-left elevation-0" flat>
+        <v-card  class="fontsig d-flex justify-left elevation-0" flat>
             <div class="profile">
                 <h1 class="pb-3">Profile</h1>
                 <v-container v-if="image===null"><v-file-input 
@@ -13,13 +13,12 @@
                     >
                 </v-file-input></v-container>
                 <v-img
-                    lazy-src="url"
                     max-height="180"
                     max-width="200"
                     :src="url"
                 ></v-img>
-                <h5 class="pt-5"><pre>Name      : </pre></h5>
-                <h5 class="pt-3"><pre>Email     : </pre></h5>
+                <h5 class="pt-5"><pre>Name      : {{profile.name}}</pre></h5>
+                <h5 class="pt-3"><pre>Email     : {{profile.email}}</pre></h5>
                 <h5 class="py-3"><pre>Password  : </pre></h5>
                 <v-btn  color="#C0325F" class="withoutupercase rounded-lg">
                       <v-icon left>mdi-pen</v-icon>
@@ -28,8 +27,13 @@
                 <br>
                 <hr style="width:200%;text-align:left;">
 
-                <a class="lgon pt-3" href="http://localhost:8080/login">Login/Register</a>
-                
+                <v-container v-if="(profile.name===null)">
+                    <a class="lgon pt-3" href="http://localhost:8080/login">Login/Register</a>
+                </v-container>
+
+                <v-container v-if="(profile.name!==null)">
+                    <a class="lgon pt-3" href="http://localhost:8080/login">Logout</a>
+                </v-container>
             </div>
         </v-card>
     
@@ -44,6 +48,11 @@
             return {
                 url: null,
                 image: null,
+                profile:{
+                    name: null,
+                    email:"",
+
+                }
             }
         },
         methods: {
