@@ -6,7 +6,7 @@
       <form class="login-right mt-10" @submit.prevent>
         <div class="h2">Login</div>
         <div class="form-group">
-          <input type="text" id="username" placeholder="Email" v-model="username">
+          <input type="text" id="username" placeholder="Email" v-model="email">
           <label for="username">Username</label>    
         </div>
         <div class="form-group">
@@ -57,14 +57,16 @@
         alert(this.email + " " + this.password + " " + this.rememberMe);
   
         axios
-          .post("http://localhost:5000/api/login", {
-            User: {
+          .post("http://localhost:5000/api/login", 
+            {
               email: this.email,
               password: this.password
             }
-          })
+          )
           .then(response => {
             alert(response);
+            console.log(response, "Cikan aya eweuh")
+            window.location.replace("/");
             //handle response and save JWT
           })
           .catch(err => {

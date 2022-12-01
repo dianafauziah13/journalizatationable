@@ -14,7 +14,7 @@
         <label for="username">Lastname</label>    
       </div>
       <div class="form-group">
-        <input type="text" id="email" placeholder="email" v-model="username">
+        <input type="text" id="email" placeholder="email" v-model="email">
         <label for="username">Email</label>    
       </div>
       <div class="form-group">
@@ -44,6 +44,8 @@ export default {
   data() {
     return {
       rememberMe: false,
+      firstname: "",
+      lastname: "",
       email: "",
       password: ""
     };
@@ -65,26 +67,34 @@ export default {
       alert(this.email + " " + this.password + " " + this.rememberMe);
 
       axios
-        .post("http://localhost:5000/api/regist", {
-          User: {
-            email: this.email,
-            password: this.password
-          }
-        })
-        .then(response => {
-          alert(response);
-          //handle response and save JWT
-        })
-        .catch(err => {
-          alert(err);
-        });
-    },
-    register() {
-      alert("Coming soon ...");
+        .post("http://localhost:5000/api/register", 
+            { 
+                firstname: this.firstname,
+                lastname: this.lastname,
+                email: this.email,
+                password: this.password,
+                password2: this.password
+              
+            }
+          )
+          .then(response => {
+            alert(response);
+            console.log(this.email, "ada ga euy")
+            console.log(response, "Cikan aya eweuh")
+            window.location.replace("/login");
+            //handle response and save JWT
+          })
+          .catch(err => {
+            alert(err);
+            console.log ("Cikan ayah")
+          });
+      },
+      register() {
+        alert("Coming soon ...");
+      }
     }
-  }
-};
-</script>
+  };
+  </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
