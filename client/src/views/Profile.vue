@@ -27,13 +27,10 @@
                 <br>
                 <hr style="width:200%;text-align:left;">
 
-                <v-container v-if="(profile.name===null)">
-                    <a class="lgon pt-3" href="http://localhost:8080/login">Login/Register</a>
-                </v-container>
+                <div class="button-area">
+                    <button class="btn btn-primary pull-right" @click="logout()" >Logout</button>
+                </div>
 
-                <v-container v-if="(profile.name!==null)">
-                    <a class="lgon pt-3" href="http://localhost:8080/login">Logout</a>
-                </v-container>
             </div>
         </v-card>
     
@@ -43,6 +40,7 @@
     </template>
      
 <script>
+import axios from "axios";
     export default {
         data() {
             return {
@@ -58,7 +56,33 @@
         methods: {
             Preview_image() {
                 this.url= URL.createObjectURL(this.image)
-            }
+            },
+
+            logout() {
+      //we should handle errors in a more scalabe way, but this works for now
+
+//       this.$confirm("Are you sure?").then(() => {
+//   //do something...
+// });
+
+      axios
+        .get("http://localhost:5000/api/logout", 
+            {}
+          )
+          .then(response => {
+            alert(response);
+            console.log(response, "Cikan aya eweuh")
+            window.location.replace("/");
+            //handle response and save JWT
+          })
+          .catch(err => {
+            alert(err);
+            console.log ("Cikan ayah")
+          });
+      },
+      register() {
+        alert("Coming soon ...");
+      }
         },
         components: {
             SideBar,

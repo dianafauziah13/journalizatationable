@@ -53,8 +53,7 @@
       },
       login() {
         //we should handle errors in a more scalabe way, but this works for now
-  
-        alert(this.email + " " + this.password + " " + this.rememberMe);
+
   
         axios
           .post("http://localhost:5000/api/login", 
@@ -64,9 +63,8 @@
             }
           )
           .then(response => {
-            alert(response);
-            console.log(response, "Cikan aya eweuh")
-            window.location.replace("/");
+            alert(response, 'Login Success!!');
+            window.location.replace("/home");
             //handle response and save JWT
           })
           .catch(err => {

@@ -4,7 +4,9 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import '@mdi/font/css/materialdesignicons.css'
+import VueSimpleAlert from "vue-simple-alert";
 
+Vue.use(VueSimpleAlert);
 
 Vue.config.productionTip = false
 

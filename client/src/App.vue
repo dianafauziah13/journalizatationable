@@ -5,20 +5,20 @@
     to ="/"
     tag="v-icon"
     >
-      <v-icon color="black">mdi-arrow-left-thick</v-icon>
+      <!-- <v-icon color="black">mdi-arrow-left-thick</v-icon> -->
     </router-link>
         <h4 class="fontsig black--text ml-3 mb-3 mt-3">Journalizeritationable</h4> 
     
-    <v-spacer></v-spacer>
+    <!-- <v-spacer></v-spacer>
     <v-badge dot overlap color="green" class="ml-1 mr-3" dark>
       <v-avatar>
          <v-icon color="#C0325F" large>mdi-bell</v-icon>
       </v-avatar>     
-    </v-badge>
+    </v-badge> -->
 
-    <v-avatar>
+    <!-- <v-avatar>
       <v-btn icon to="/profile"><v-icon color="#C0325F" large>mdi-account-circle-outline</v-icon></v-btn>
-    </v-avatar>
+    </v-avatar> -->
   </v-app-bar>
     <v-main>
       <router-view/>

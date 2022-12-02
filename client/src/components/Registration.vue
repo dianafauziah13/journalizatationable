@@ -81,7 +81,7 @@ export default {
             alert(response);
             console.log(this.email, "ada ga euy")
             console.log(response, "Cikan aya eweuh")
-            window.location.replace("/login");
+            window.location.replace("/");
             //handle response and save JWT
           })
           .catch(err => {
