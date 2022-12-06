@@ -232,9 +232,9 @@ export default {
     async created() {
         const response = await API.getPostByDate(this.chooseDate);
         this.post = response;
-        console.log(this.post)
-        console.log(this.chooseDate)
-        console.log("ini date",this.date)
+        // console.log(this.post)
+        // console.log(this.chooseDate)
+        // console.log("ini date",this.date)
         
     },
         methods: {
@@ -245,14 +245,14 @@ export default {
               this.date = mydate;
               this.post = await API.getPostByDate(this.date);
 
-              console.log(this.post)
+              // console.log(this.post)
 
             },
             async updateForm() {
               const post = this.post[0];
-              console.log(post); 
+              // console.log(post); 
               const response = await API.updatePost(post._id, post);
-              console.log(response);
+              // console.log(response);
               this.$router.push({ name: 'Home', params: {message: response.message} });
               alert('Edit Data Success!!')       
 
@@ -260,7 +260,7 @@ export default {
             async Delete() {
               const post = this.post[0];
               const response = await API.deletePost(post._id);
-              console.log(response);
+              // console.log(response);
               this.$router.push({ name: 'Home', params: {message: response.message} });
               alert('Delete Data Success!!')       
               window.location.reload();

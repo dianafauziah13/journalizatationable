@@ -61,10 +61,18 @@
               email: this.email,
               password: this.password
             }
+            
+            
           )
+          
           .then(response => {
-            alert(response, 'Login Success!!');
-            window.location.replace("/home");
+            console.log(response.data);
+    
+            localStorage.setItem("token", response.data.token);
+            // alert(localStorage.getItem("token"));
+            // alert(response, 'Login Success!!');
+            if (response.data.token) window.location.replace("/home");
+            else alert("login gagal");
             //handle response and save JWT
           })
           .catch(err => {

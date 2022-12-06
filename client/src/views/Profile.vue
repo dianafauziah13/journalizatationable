@@ -69,15 +69,16 @@ import axios from "axios";
         .get("http://localhost:5000/api/logout", 
             {}
           )
-          .then(response => {
-            alert(response);
-            console.log(response, "Cikan aya eweuh")
+          .then(() => {
+            localStorage.removeItem("token");
+            alert("logout berhasil");
+            // console.log(response, "Cikan aya eweuh")
             window.location.replace("/");
             //handle response and save JWT
           })
           .catch(err => {
             alert(err);
-            console.log ("Cikan ayah")
+            // console.log ("Cikan ayah")
           });
       },
       register() {

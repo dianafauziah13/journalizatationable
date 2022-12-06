@@ -217,6 +217,7 @@ import SideBar from "@/components/SideBar.vue";
                 }
                 const response = await API.addPost(formData);
                 console.log(response);
+                console.log(localStorage.getItem("token"));
                 this.$router.push({ name: 'Home', params: {message: response.message} });
                 // if(this.$refs.form.validate()){
                 //     const response = await API.addPost(formData);

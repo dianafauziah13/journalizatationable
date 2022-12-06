@@ -48,7 +48,7 @@ export default {
     async created() {
         const response = await API.getAllPosts();
         this.post = response;
-        console.log(this.post)       
+        // console.log(this.post)       
     }
 }
 </script>
