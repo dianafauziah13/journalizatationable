@@ -6,20 +6,16 @@
     <form class="regist-right" @submit.prevent>
       <div class="h2">Register</div>
       <div class="form-group">
-        <input type="text" id="firstname" placeholder="firstname" v-model="firstname">
-        <label for="username">Firstname</label>    
+        <input type="text" id="firstname" placeholder="firstname" v-model="firstname">    
       </div>
       <div class="form-group">
-        <input type="text" id="lastname" placeholder="lastname" v-model="lastname">
-        <label for="username">Lastname</label>    
+        <input type="text" id="lastname" placeholder="lastname" v-model="lastname">   
       </div>
       <div class="form-group">
-        <input type="text" id="email" placeholder="email" v-model="email">
-        <label for="username">Email</label>    
+        <input type="text" id="email" placeholder="email" v-model="email">    
       </div>
       <div class="form-group">
-        <input type="password" id="Password" placeholder="Password" v-model="password">
-        <label for="Password">Password</label>    
+        <input type="password" id="Password" placeholder="Password" v-model="password">    
       </div>
       <div class="checkbox-container">
         <input type="checkbox" v-model="rememberMe">

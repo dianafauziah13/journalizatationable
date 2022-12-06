@@ -6,12 +6,10 @@
       <form class="login-right mt-10" @submit.prevent>
         <div class="h2">Login</div>
         <div class="form-group">
-          <input type="text" id="username" placeholder="Email" v-model="email">
-          <label for="username">Username</label>    
+          <input type="text" id="username" placeholder="Email" v-model="email">    
         </div>
         <div class="form-group">
-          <input type="password" id="Password" placeholder="Password" v-model="password">
-          <label for="Password">Password</label>    
+          <input type="password" id="Password" placeholder="Password" v-model="password">   
         </div>
         <div class="checkbox-container">
           <input type="checkbox" v-model="rememberMe">
@@ -69,10 +67,8 @@
             console.log(response.data);
     
             localStorage.setItem("token", response.data.token);
-            // alert(localStorage.getItem("token"));
-            // alert(response, 'Login Success!!');
             if (response.data.token) window.location.replace("/home");
-            else alert("login gagal");
+            else this.$alert("login gagal");
             //handle response and save JWT
           })
           .catch(err => {
