@@ -5,7 +5,7 @@
                     <v-card color="#C0325F" class="rounded-lg px-2 " flat>
                       <v-row>
                         <v-col class="fontsig fw-bold d-flex justify-center mt-3" cols="12" sm="12">
-                          <h1 class="white--text">Hello, Diana!</h1>
+                          <h1 class="white--text">Welcome!</h1>
                           <br>
                         </v-col>
                         <h5 class="fontsig white--text text--lighten-4 d-flex justify-center">What you have done today?</h5>
