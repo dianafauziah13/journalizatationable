@@ -2,30 +2,43 @@
   <v-app>
     <SideBar/>
     <v-card  class="rounded-lg" flat>
+      
 
-                  <v-container class="fontsig bg-surface-variant" >
-
+                  <v-container class=" bg-surface-variant" >
+                    <VueHtml2pdf
+                        :show-layout="false"
+                        :float-layout="false"
+                        :enable-download="true"
+                        :preview-modal="false"
+                        :paginate-elements-by-height="1400"
+                        filename="myStory"
+                        :pdf-quality="2"
+                        :manual-pagination="false"
+                        pdf-format="a4"
+                        pdf-orientation="portrait"
+                        pdf-content-width="800px"
+                        ref="html2Pdf"
+                    >
+                        <section slot="pdf-content">
+                          <v-row class="h2 mt-10"><center>My Story</center></v-row>
                     <v-row no-gutters v-for="post in post" :key="post._id">
-                        <v-row class="mt-10">
-                            <v-col
-                            cols="12"
-                            sm="6"
-                            md="4"
-                            >
-                            <v-text-field
-                            label="Date is"
-                            placeholder="Date"
-                            filled
-                            disabled
-                            v-model="post.created"
-                            prepend-icon="mdi-calendar"
-                            ></v-text-field>
-                            </v-col>
+                      
+                        <v-row class="h4 fontsig ma-3">
+                            {{formatDate(post.created)}}
+                        </v-row>
+                        <v-row class="h5 fw-normal ma-3">
+                          {{post.grid1}}. {{post.grid2}}. {{post.grid3}}. {{post.grid4}}. {{post.grid5}}. {{post.grid6}}
                         </v-row>
                         
-                      <v-col >
+                      <!-- <v-col >
                         <v-sheet class="pa-1 ma-1">
                           <h5 class="pink--text font-weight-bold mb-4">How are you today?</h5>
+                          {{post.grid1}} 
+                          {{post.grid2}}
+                          {{post.grid3}}
+                          {{post.grid4}}
+                          {{post.grid5}}
+                          {{post.grid6}}
                           <v-textarea
                            label="Input text here"
                             background-color="#FEE3EC"
@@ -151,10 +164,16 @@
                             v-model="post.grid6"
                           ></v-textarea>
                         </v-sheet>
-                      </v-col>
+                      </v-col> -->
                     </v-row>
+                  </section>
+                  </VueHtml2pdf>
+                  <v-btn color="#C0325F" class="withoutupercase mt-3 ml-5" @click='generateReport()'>
+                    <v-icon left>mdi-download</v-icon>
+                    Export To PDF
+                  </v-btn>
                   </v-container>
-                
+        
               </v-card>
   </v-app> 
 </template>
@@ -162,6 +181,8 @@
 <script>
 import API from '@/api';
 import SideBar from './SideBar.vue';
+import VueHtml2pdf from 'vue-html2pdf';
+
 
 export default { 
   data() {
@@ -179,10 +200,17 @@ export default {
         
     },
     components:{
-      SideBar
+      SideBar,
+      VueHtml2pdf
     },
         methods: {
-
+          formatDate(date) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' }
+            return new Date(date).toLocaleDateString('en', options)
+          },
+          generateReport () {
+            this.$refs.html2Pdf.generatePdf()
+          }
         }
 }
 </script>
