@@ -67,6 +67,8 @@
             console.log(response.data);
     
             localStorage.setItem("token", response.data.token);
+            localStorage.setItem("name", response.data.firstname);
+            localStorage.setItem("email", response.data.email);
             if (response.data.token) window.location.replace("/home");
             else this.$alert("login gagal");
             //handle response and save JWT

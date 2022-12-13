@@ -47,8 +47,8 @@ import axios from "axios";
                 url: null,
                 image: null,
                 profile:{
-                    name: null,
-                    email:"",
+                    name: localStorage.getItem("name"),
+                    email:localStorage.getItem("email"),
 
                 }
             }

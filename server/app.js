@@ -79,6 +79,7 @@ app.post('/api/register',function(req,res){
                          isAuth : true,
                          id : user._id
                          ,email : user.email
+                         ,firstname : user.firstname
                          ,token : user.token
                      });
                  });    
